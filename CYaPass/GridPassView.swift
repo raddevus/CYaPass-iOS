@@ -31,11 +31,11 @@ class GridPassView : UIView{
     var currentLocation : CGPoint! = nil
     var previousPoint : CGPoint! = nil
     let postWidth :Int = 5
-    let postXOffset : Int = 5
+    let postXOffset : Int = 0
     
     init(frame : CGRect, width: Int, height: Int){
         super.init(frame: frame)
-        self.backgroundColor = gridBackColor
+        self.backgroundColor = transparent//gridBackColor
         self.Width = width
         self.Height = height
         self.numOfCells = 5
@@ -59,26 +59,26 @@ class GridPassView : UIView{
     internal func drawPosts()
     {
         //let halfSize:CGFloat = min( bounds.size.width/2, bounds.size.height/2)
-        let halfSize:CGFloat = 10
+        
         let desiredLineWidth:CGFloat = 3    // your desired value
         //var allPaths : [UIBezierPath]
         for idx in 0...allPosts.count-1 {
             
-            var circlePath = UIBezierPath(
+            let circlePath = UIBezierPath(
                 arcCenter: CGPoint(x:allPosts[idx].x,y:allPosts[idx].y),
                 radius: CGFloat( postWidth),
                 startAngle: CGFloat(0),
                 endAngle:CGFloat(M_PI * 2),
                 clockwise: true)
             
-            var shapeLayer = CAShapeLayer()
+            let shapeLayer = CAShapeLayer()
             shapeLayer.path = circlePath.cgPath
             
             shapeLayer.fillColor = gridPostColor.cgColor
             shapeLayer.strokeColor = gridPostColor.cgColor
             shapeLayer.lineWidth = desiredLineWidth
             
-            layer.addSublayer(shapeLayer)
+            self.superview?.layer.addSublayer(shapeLayer)
         }
     }
     
@@ -294,32 +294,4 @@ class GridPassView : UIView{
             }
         }
     }
-  
-    
-    func getCurrentViewController() -> UIViewController? {
-        
-        if let rootController = UIApplication.shared.keyWindow?.rootViewController {
-            var currentController: UIViewController! = rootController
-            while( currentController.presentedViewController != nil ) {
-                currentController = currentController.presentedViewController
-            }
-            return currentController
-        }
-        return nil
-        
-    }
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let currentPoint = touch.location(in: self)
-            // do something with your currentPoint
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            _ = touch.location(in: self)
-            // do something with your currentPoint
-            
-            
-        }
-    }}
+}
