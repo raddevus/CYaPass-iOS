@@ -17,15 +17,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
-       /* let firstFrame : CGRect = CGRect(origin:CGPoint(x:0,y:0), size:CGSize(dictionaryRepresentation: 0 as! CFDictionary)!)
-       
         
-        g = GridPassView(frame: firstFrame, width: 50, height: 50)
-        
-        //g?.externalViewContoller = nil//self
-        g?.tag = 100
-        TopView.addSubview(g!)*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +29,11 @@ class SettingsViewController: UIViewController {
         var width : Int = Int(UpperView.frame.width)
         var height : Int = Int(UpperView.frame.height)
         MainOutLabel.text = String(describing: width) + "  " + String(describing: height)
-    
+        g = GridPassView(frame: UpperView.frame, width: width, height: height)
+        
+        //g?.externalViewContoller = nil//self
+        g?.tag = 101
+        UpperView.addSubview(g!)
     }
     
     override func viewDidAppear(_ animated: Bool) {

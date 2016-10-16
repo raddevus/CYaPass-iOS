@@ -74,13 +74,13 @@ class MainViewController: UIViewController {
         addSubView()
     }
     
-    func genUserHash() -> String{
+    func genUserHash(){
         //let hg: HashGenerator = HashGenerator(clearText: userClearText.text! +  (g?.outValue)!)
         let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)!)
     //    outputMsg.text = hg.finalHash
         HashLabelOutlet.text = hg.finalHash
         UIPasteboard.general.string = hg.finalHash
-        return (g?.outValue)!
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
