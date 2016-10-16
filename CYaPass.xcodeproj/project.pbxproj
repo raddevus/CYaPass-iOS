@@ -8,22 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		635526911DA9A47800390466 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526901DA9A47800390466 /* AppDelegate.swift */; };
-		635526931DA9A47800390466 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526921DA9A47800390466 /* FirstViewController.swift */; };
-		635526951DA9A47800390466 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526941DA9A47800390466 /* SecondViewController.swift */; };
+		635526931DA9A47800390466 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526921DA9A47800390466 /* MainViewController.swift */; };
+		635526951DA9A47800390466 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526941DA9A47800390466 /* SettingsViewController.swift */; };
 		635526981DA9A47800390466 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635526961DA9A47800390466 /* Main.storyboard */; };
 		6355269A1DA9A47900390466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635526991DA9A47800390466 /* Assets.xcassets */; };
 		6355269D1DA9A47900390466 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6355269B1DA9A47900390466 /* LaunchScreen.storyboard */; };
+		635526A61DAA8E6500390466 /* UserPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526A51DAA8E6500390466 /* UserPath.swift */; };
+		635526A81DAA8E8F00390466 /* SiteKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526A71DAA8E8F00390466 /* SiteKey.swift */; };
+		635526AA1DAA920500390466 /* HashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526A91DAA920500390466 /* HashGenerator.swift */; };
+		635526AC1DAA935C00390466 /* GridPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526AB1DAA935C00390466 /* GridPassView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6355268D1DA9A47800390466 /* CYaPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CYaPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635526901DA9A47800390466 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		635526921DA9A47800390466 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		635526941DA9A47800390466 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		635526921DA9A47800390466 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		635526941DA9A47800390466 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		635526971DA9A47800390466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		635526991DA9A47800390466 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6355269C1DA9A47900390466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6355269E1DA9A47900390466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		635526A41DA9BF4500390466 /* MainBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBridge.h; sourceTree = "<group>"; };
+		635526A51DAA8E6500390466 /* UserPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPath.swift; sourceTree = "<group>"; };
+		635526A71DAA8E8F00390466 /* SiteKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteKey.swift; sourceTree = "<group>"; };
+		635526A91DAA920500390466 /* HashGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashGenerator.swift; sourceTree = "<group>"; };
+		635526AB1DAA935C00390466 /* GridPassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPassView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +65,18 @@
 		6355268F1DA9A47800390466 /* CYaPass */ = {
 			isa = PBXGroup;
 			children = (
+				635526A41DA9BF4500390466 /* MainBridge.h */,
 				635526901DA9A47800390466 /* AppDelegate.swift */,
-				635526921DA9A47800390466 /* FirstViewController.swift */,
-				635526941DA9A47800390466 /* SecondViewController.swift */,
+				635526921DA9A47800390466 /* MainViewController.swift */,
+				635526941DA9A47800390466 /* SettingsViewController.swift */,
 				635526961DA9A47800390466 /* Main.storyboard */,
 				635526991DA9A47800390466 /* Assets.xcassets */,
 				6355269B1DA9A47900390466 /* LaunchScreen.storyboard */,
 				6355269E1DA9A47900390466 /* Info.plist */,
+				635526A51DAA8E6500390466 /* UserPath.swift */,
+				635526A71DAA8E8F00390466 /* SiteKey.swift */,
+				635526A91DAA920500390466 /* HashGenerator.swift */,
+				635526AB1DAA935C00390466 /* GridPassView.swift */,
 			);
 			path = CYaPass;
 			sourceTree = "<group>";
@@ -140,9 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635526951DA9A47800390466 /* SecondViewController.swift in Sources */,
+				635526951DA9A47800390466 /* SettingsViewController.swift in Sources */,
+				635526AA1DAA920500390466 /* HashGenerator.swift in Sources */,
+				635526A81DAA8E8F00390466 /* SiteKey.swift in Sources */,
 				635526911DA9A47800390466 /* AppDelegate.swift in Sources */,
-				635526931DA9A47800390466 /* FirstViewController.swift in Sources */,
+				635526931DA9A47800390466 /* MainViewController.swift in Sources */,
+				635526A61DAA8E6500390466 /* UserPath.swift in Sources */,
+				635526AC1DAA935C00390466 /* GridPassView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +286,11 @@
 				DEVELOPMENT_TEAM = FEHZ353535;
 				INFOPLIST_FILE = CYaPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raddevus.CYaPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CYaPass/MainBridge.h;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = CYaPass/MainBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -281,8 +302,11 @@
 				DEVELOPMENT_TEAM = FEHZ353535;
 				INFOPLIST_FILE = CYaPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raddevus.CYaPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CYaPass/MainBridge.h;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = CYaPass/MainBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -306,6 +330,7 @@
 				635526A31DA9A47900390466 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
