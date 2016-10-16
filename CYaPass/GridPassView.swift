@@ -147,20 +147,6 @@ class GridPassView : UIView{
         }
     }
     
-    func drawUserPoints(){
-        
-        if (touchPoints?.count)! > 0{
-            let subIdx :Int = touchPoints.count - 1
-            /*for index in 0...subIdx{
-                drawPoint(point1: touchPoints[index])
-            }*/
-            if (HitTest(p: &touchPoints[0])){
-                drawPoint(point1: touchPoints[0])
-            }
-           
-        }
-    }
-    
     func drawPoint(point1 :CGPoint){
         let circlePath = UIBezierPath(
             arcCenter: point1,
@@ -177,39 +163,11 @@ class GridPassView : UIView{
         
         layer.addSublayer(shapeLayer)
     }
-
-    func DrawLine(x: Int, y: Int){
-        
-        if (!previousPointExists) { return; }
-        previousPointExists = true;
-        var plusPath = UIBezierPath()
-        
-        //set the path's line width to the height of the stroke
-        plusPath.lineWidth = 5
-        
-        //move the initial point of the path
-        //to the start of the horizontal stroke
-        plusPath.move(to: CGPoint(
-            x:previousPoint.x,
-            y:previousPoint.y))
-        
-        //add a point to the path at the end of the stroke
-        plusPath.addLine(to: CGPoint(
-            x:x,
-            y:y))
-        
-        //set the stroke color
-        UIColor.black.setStroke()
-        
-        //draw the stroke
-        plusPath.stroke()
-        
-    }
     
     func DrawUserPath(){
         //if us.allSegments.count < 1 {return}
         
-        for ls in us.allSegments as! Set<Segment> {
+        for ls in us.allSegments  {
             var plusPath = UIBezierPath()
             
             //set the path's line width to the height of the stroke

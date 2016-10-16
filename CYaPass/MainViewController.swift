@@ -38,11 +38,14 @@ class MainViewController: UIViewController {
         clearGrid()
     }
     
-    func addSubView(){
-        
-        if let viewWithTag = self.view.viewWithTag(gridViewTag){
-            viewWithTag.removeFromSuperview()
-            g = nil
+    func addSubView(forceRemoveGridView : Bool = false){
+        view.setNeedsDisplay()
+        if forceRemoveGridView{
+            if let viewWithTag = self.view.viewWithTag(gridViewTag){
+                viewWithTag.removeFromSuperview()
+                
+                g = nil
+            }
         }
         topGridViewWidth = Int(TopGridView.frame.width)
         
@@ -82,8 +85,7 @@ class MainViewController: UIViewController {
         }
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        g=nil
-        addSubView()
+        addSubView(forceRemoveGridView: true)
     }
 }
 
