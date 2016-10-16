@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
     }
     
     func addSubView(forceRemoveGridView : Bool = false){
-        view.setNeedsDisplay()
+        
         if forceRemoveGridView{
             if let viewWithTag = self.view.viewWithTag(gridViewTag){
                 viewWithTag.removeFromSuperview()
@@ -56,12 +56,11 @@ class MainViewController: UIViewController {
         g = GridPassView(frame: TopGridView.frame, width: topGridViewWidth!, height: topGridViewHeight!)
         g?.tag = gridViewTag
         TopGridView.addSubview(g!)
-        
     }
     
     func clearGrid(){
         
-        addSubView()
+        addSubView(forceRemoveGridView: true)
     }
     
     func genUserHash(){

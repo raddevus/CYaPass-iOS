@@ -78,7 +78,7 @@ class GridPassView : UIView{
             shapeLayer.strokeColor = gridPostColor.cgColor
             shapeLayer.lineWidth = desiredLineWidth
             
-            self.superview?.layer.addSublayer(shapeLayer)
+            self.layer.addSublayer(shapeLayer)
         }
     }
     
