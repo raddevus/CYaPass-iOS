@@ -31,34 +31,40 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
                                 <frame key="frameInset" minX="125.5" minY="388" width="46" height="30"/>
                                 <state key="normal" title="Clear Grid"/>
                                 <connections>
                                     <action selector="ClearGridButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="knp-dm-oG0"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="bottom" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sW1-pq-0Gg">
-                                <frame key="frameInset" minY="419" height="216"/>
-                            </pickerView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yrl-9S-DHQ">
+                                <frame key="frameInset" minX="67" minY="67" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.94458484343384919" green="0.99117768925672212" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sW1-pq-0Gg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="3Wo-T0-j37"/>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="4xs-65-YDB" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="CHs-Tw-rKD"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="1qR-7Y-3RA"/>
+                            <constraint firstItem="yrl-9S-DHQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="3e6-dZ-1B1"/>
+                            <constraint firstItem="yrl-9S-DHQ" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.5" id="9JL-LA-b2c"/>
+                            <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="GZk-vn-CID"/>
                             <constraint firstItem="4xs-65-YDB" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="8" id="TDf-wu-Jbg"/>
-                            <constraint firstItem="sW1-pq-0Gg" firstAttribute="top" secondItem="4xs-65-YDB" secondAttribute="bottom" constant="10" id="arS-ek-T4i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yrl-9S-DHQ" secondAttribute="trailing" id="a7p-DJ-XUg"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="350" id="d9l-H1-wDN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" id="fhY-Xk-ckN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" id="jNe-Bm-wPL"/>
+                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="yrl-9S-DHQ" secondAttribute="bottom" id="mMP-dl-G2A"/>
+                            <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="vdB-aC-60G"/>
+                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="xBZ-97-tjg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="ClearGridButton" destination="4xs-65-YDB" id="wNS-4h-ild"/>
                         <outlet property="HashLabelOutlet" destination="A5M-7J-77L" id="Rmp-58-vU0"/>
+                        <outlet property="TopGridView" destination="yrl-9S-DHQ" id="25z-re-gNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

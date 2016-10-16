@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var UpperView: UIView!
     @IBOutlet weak var MainOutLabel: UILabel!
-    var g : UIView!
+    var g : UIView! = nil
     @IBOutlet weak var TopView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,13 @@ class SettingsViewController: UIViewController {
         var width : Int = Int(UpperView.frame.width)
         var height : Int = Int(UpperView.frame.height)
         MainOutLabel.text = String(describing: width) + "  " + String(describing: height)
+        if (g == nil){
         g = GridPassView(frame: UpperView.frame, width: width, height: height)
         
-        //g?.externalViewContoller = nil//self
+        
         g?.tag = 101
         UpperView.addSubview(g!)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

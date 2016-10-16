@@ -12,34 +12,20 @@ class MainViewController: UIViewController {
 
     
     
+    @IBOutlet weak var TopGridView: UIView!
     
-        @IBOutlet weak var ClearGridButton: UIButton!
+    @IBOutlet weak var ClearGridButton: UIButton!
     @IBOutlet weak var HashLabelOutlet: UILabel!
     var g :GridPassView? = nil
     var screenSize: CGRect? = nil
+    var topGridViewWidth : Int? = nil
+    var topGridViewHeight : Int? = nil
+    let gridViewTag = 100
     let blueFontColor = UIColor(red: 240/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
     let greenFontColor = UIColor(red: 120/255.0, green: 100/255.0, blue: 75/255.0, alpha: 1.0)
-    let paddingTop :Int = 25;
-    let paddingLeft :Int = 5;
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after // Dispose of any resources that can be recreated.
-        /*        let input = "super"
-         let xdata = input.data(using: String.Encoding.utf8)
-         var us: UserShape = UserShape(clearText: "super")
-         
-         let outData = sha256(data: xdata!)
-         var outputString = String(data: outData, encoding: String.Encoding.ascii)
-         
-         outputMsg.text = us.finalHash
-         counterMsg.text = String(us.finalHashLength) + " bytes"
-         //outputMsg.text = "super star is here"
-         //view.addSubview(firstView)
-         */
-        screenSize = UIScreen.main.bounds
-        
-        addSubView()
         
     }
 
@@ -53,39 +39,51 @@ class MainViewController: UIViewController {
     }
     
     func addSubView(){
-        // screenSize?.width)!*0.95
-        // screenSize?.height)!*0.5
-        let gridPassWidth :Int = Int(((screenSize?.width)!*0.95))
-        let gridPassHeight :Int = Int(((screenSize?.width)!*0.95))
-        let firstFrame : CGRect = CGRect(x:paddingLeft, y:paddingTop, width: gridPassWidth, height: gridPassHeight)
+        
+        if let viewWithTag = self.view.viewWithTag(gridViewTag){
+            viewWithTag.removeFromSuperview()
+            g = nil
+        }
+        topGridViewWidth = Int(TopGridView.frame.width)
         
         
-        g = GridPassView(frame: firstFrame, width:gridPassWidth, height: gridPassHeight)
+        topGridViewHeight = Int(TopGridView.frame.height)
         
-        g?.tag = 100
-        view.addSubview(g!)
+
+        g = GridPassView(frame: TopGridView.frame, width: topGridViewWidth!, height: topGridViewHeight!)
+        g?.tag = gridViewTag
+        TopGridView.addSubview(g!)
+        
     }
     
     func clearGrid(){
-        g = nil;
-        if let viewWithTag = self.view.viewWithTag(100){
-            viewWithTag.removeFromSuperview()
-        }
+        
         addSubView()
     }
     
     func genUserHash(){
         //let hg: HashGenerator = HashGenerator(clearText: userClearText.text! +  (g?.outValue)!)
-        let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)!)
+        if g?.outValue != nil{
+            let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)!)
+            HashLabelOutlet.text = hg.finalHash
+            UIPasteboard.general.string = hg.finalHash
+        }
     //    outputMsg.text = hg.finalHash
-        HashLabelOutlet.text = hg.finalHash
-        UIPasteboard.general.string = hg.finalHash
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             genUserHash()
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        if g == nil{
+        addSubView()
+        }
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        g=nil
+        addSubView()
+    }
 }
 

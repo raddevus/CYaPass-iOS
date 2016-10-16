@@ -281,16 +281,17 @@ class GridPassView : UIView{
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
+            
             currentLocation = touch.location(in: self)
             SelectNewPoint()
             touchPoints.append(currentLocation)
             DrawUserPath()
             setNeedsDisplay()
-            outValue = String(us.PostValue)//  String(describing: currentLocation.x )
-            outValue = outValue +  ("computer")
-            self.superview?.touchesBegan(touches, with: event)
-            //externalViewContoller?.genUserHash()
-
+            if us.PostValue != nil{
+                outValue = String(us.PostValue)
+                outValue = outValue +  ("computer")
+                self.superview?.touchesBegan(touches, with: event)
+            }
         }
     }
   
