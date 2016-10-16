@@ -53,7 +53,7 @@ class MainViewController: UIViewController {
         topGridViewHeight = Int(TopGridView.frame.height)
         
 
-        g = GridPassView(frame: TopGridView.frame, width: topGridViewWidth!, height: topGridViewHeight!)
+        g = GridPassView(frame: view.frame, width: topGridViewWidth!, height: topGridViewHeight!)
         g?.tag = gridViewTag
         TopGridView.addSubview(g!)
     }

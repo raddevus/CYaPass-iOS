@@ -34,6 +34,8 @@ class GridPassView : UIView{
     let postXOffset : Int = 0
     
     init(frame : CGRect, width: Int, height: Int){
+        
+        
         super.init(frame: frame)
         self.backgroundColor = transparent//gridBackColor
         self.Width = width
