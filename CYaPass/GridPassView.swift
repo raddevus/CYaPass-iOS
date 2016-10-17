@@ -249,7 +249,6 @@ class GridPassView : UIView{
             setNeedsDisplay()
             if us.PostValue != nil{
                 outValue = String(us.PostValue)
-                outValue = outValue +  ("computer")
                 self.superview?.touchesBegan(touches, with: event)
             }
         }

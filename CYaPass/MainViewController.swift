@@ -8,12 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIPickerViewDelegate {
 
     
     
     @IBOutlet weak var TopGridView: UIView!
     
+    
+    @IBOutlet weak var SiteKeyPicker: UIPickerView!
     @IBOutlet weak var ClearGridButton: UIButton!
     @IBOutlet weak var HashLabelOutlet: UILabel!
     var g :GridPassView? = nil
@@ -23,7 +25,8 @@ class MainViewController: UIViewController {
     let gridViewTag = 100
     let blueFontColor = UIColor(red: 240/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
     let greenFontColor = UIColor(red: 120/255.0, green: 100/255.0, blue: 75/255.0, alpha: 1.0)
-        
+    var siteKeyPickerValues :[String] = ["computer", "appleId", "linkedin"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,12 +34,24 @@ class MainViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     @IBAction func ClearGridButtonClicked(_ sender: AnyObject) {
         clearGrid()
     }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return siteKeyPickerValues.count
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+        return siteKeyPickerValues[row]
+    }
+    
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
     
     func addSubView(forceRemoveGridView : Bool = false){
         
@@ -59,14 +74,26 @@ class MainViewController: UIViewController {
     }
     
     func clearGrid(){
-        
         addSubView(forceRemoveGridView: true)
+        
+    }
+    
+    func addNewSiteKey(key : String){
+        siteKeyPickerValues.append(key)
+        SiteKeyPicker.reloadAllComponents()
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        genUserHash()
+        
     }
     
     func genUserHash(){
         //let hg: HashGenerator = HashGenerator(clearText: userClearText.text! +  (g?.outValue)!)
         if g?.outValue != nil{
-            let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)!)
+            
+            var selectedItemValue :String = siteKeyPickerValues[SiteKeyPicker.selectedRow(inComponent: 0)]
+            let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)! + selectedItemValue)
             HashLabelOutlet.text = hg.finalHash
             UIPasteboard.general.string = hg.finalHash
         }
