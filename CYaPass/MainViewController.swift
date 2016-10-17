@@ -89,15 +89,18 @@ class MainViewController: UIViewController, UIPickerViewDelegate {
     }
     
     func genUserHash(){
-        //let hg: HashGenerator = HashGenerator(clearText: userClearText.text! +  (g?.outValue)!)
         if g?.outValue != nil{
             
             var selectedItemValue :String = siteKeyPickerValues[SiteKeyPicker.selectedRow(inComponent: 0)]
-            let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)! + selectedItemValue)
+            let hg: HashGenerator = HashGenerator(clearText: "80" + selectedItemValue)
+            // ORIGINAL LINE FOLLOWS
+            // let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)! + selectedItemValue)
             HashLabelOutlet.text = hg.finalHash
             UIPasteboard.general.string = hg.finalHash
         }
-    //    outputMsg.text = hg.finalHash
+        // ###### following line allows testing of postvalues
+        // HashLabelOutlet.text = String(describing: g?.us.PostValue)
+    
         
     }
     
