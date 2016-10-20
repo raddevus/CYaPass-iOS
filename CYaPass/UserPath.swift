@@ -16,45 +16,42 @@ class UserPath {
     var PostPoints : String!
     var PostValue : Int!
     var currentPoint : CGPoint = CGPoint.zero
+    var previousPostValue : Int!
+    
+    init(){
+        self.PostValue = 0
+    }
+    
     func append(currentPoint:CGPoint, postValue : Int) {
         self.currentPoint = currentPoint
         
-        if allPoints.count == 0{
-           self.PostValue =  postValue
-            self.PostPoints = "\(postValue)" + "_"
-        }
-        if allPoints.count > 0{
-            let segmentCount :Int = allSegments.count
-            allSegments.insert(Segment(begin: allPoints[allPoints.count-1],end: currentPoint))
-            if allSegments.count > segmentCount{
-                // if the segment was added there is a new postPoint
-                self.PostValue = self.PostValue + postValue
-  
-                self.PostPoints = self.PostPoints + "\(postValue)" + "_"
+        if allPoints.count >= 1{
+            if (allPoints[allPoints.count-1].x == currentPoint.x && allPoints[allPoints.count - 1].y == currentPoint.y){
+                return;
             }
+            allSegments.insert(Segment(begin: allPoints[allPoints.count - 1], end: currentPoint, pointValue: postValue + previousPostValue))
         }
+        
         allPoints.append(currentPoint)
+        previousPostValue = postValue;
     }
-    /*func CheckForDuplicate() ->Bool{
-        for p in allPoints as! [CGPoint]{
-            if (p.x == currentPoint.x && p.y == currentPoint.y){
-                return true;
-            }
-        }
-        return false;
-    }*/
     
     func CalculateGeometricSaltValue(){
-        
+        self.PostValue = 0;
+        for s in allSegments{
+            self.PostValue = self.PostValue + s.PointValue
+        }
     }
 }
 
 class Segment : Hashable{
     var Begin : CGPoint
     var End : CGPoint
-    init(begin :CGPoint, end :CGPoint) {
+    var PointValue : Int
+    init(begin :CGPoint, end :CGPoint, pointValue : Int) {
         Begin = begin
         End = end
+        PointValue = pointValue
     }
     var hashValue : Int {
         get {

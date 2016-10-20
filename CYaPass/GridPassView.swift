@@ -228,8 +228,8 @@ class GridPassView : UIView{
             return;
         }
         
-        us.append(currentPoint: currentPoint, postValue: hitTestIdx);
-        
+        us.append(currentPoint: currentPoint, postValue: hitTestIdx)
+        us.CalculateGeometricSaltValue()
         DrawHighlight()
     }
     
@@ -244,7 +244,7 @@ class GridPassView : UIView{
             
             currentLocation = touch.location(in: self)
             SelectNewPoint()
-            touchPoints.append(currentLocation)
+            
             DrawUserPath()
             setNeedsDisplay()
             if us.PostValue != nil{

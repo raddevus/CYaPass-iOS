@@ -91,8 +91,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate {
     func genUserHash(){
         if g?.outValue != nil{
             
-            var selectedItemValue :String = siteKeyPickerValues[SiteKeyPicker.selectedRow(inComponent: 0)]
-            let hg: HashGenerator = HashGenerator(clearText: "80" + selectedItemValue)
+            let selectedItemValue :String = siteKeyPickerValues[SiteKeyPicker.selectedRow(inComponent: 0)]
+            let hg: HashGenerator = HashGenerator(clearText:  g!.outValue + selectedItemValue)
             // ORIGINAL LINE FOLLOWS
             // let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)! + selectedItemValue)
             HashLabelOutlet.text = hg.finalHash
