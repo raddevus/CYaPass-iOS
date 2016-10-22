@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UIPickerViewDelegate {
+class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate{
 
     
     
     @IBOutlet weak var TopGridView: UIView!
     
+    @IBOutlet weak var SiteKeyTextField: UITextField!
     
     @IBOutlet weak var SiteKeyPicker: UIPickerView!
     @IBOutlet weak var ClearGridButton: UIButton!
@@ -27,15 +28,28 @@ class MainViewController: UIViewController, UIPickerViewDelegate {
     let greenFontColor = UIColor(red: 120/255.0, green: 100/255.0, blue: 75/255.0, alpha: 1.0)
     var siteKeyPickerValues :[String] = ["computer", "appleId", "linkedin"]
     
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.SiteKeyTextField.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    @IBAction func AddSiteButtonClicked(_ sender: AnyObject) {
+        if SiteKeyTextField.text != nil && !(SiteKeyTextField.text?.isEmpty)! {
+            addNewSiteKey(key: SiteKeyTextField.text!)
+            SiteKeyTextField.text = ""
+            [SiteKeyTextField, resignFirstResponder] as [Any];
+            
+        }
+    }
     @IBAction func ClearGridButtonClicked(_ sender: AnyObject) {
         clearGrid()
     }

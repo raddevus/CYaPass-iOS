@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        var width : Int = Int(UpperView.frame.width)
+       /* var width : Int = Int(UpperView.frame.width)
         var height : Int = Int(UpperView.frame.height)
         MainOutLabel.text = String(describing: width) + "  " + String(describing: height)
         if (g == nil){
@@ -35,7 +35,7 @@ class SettingsViewController: UIViewController {
         
         g?.tag = 101
         UpperView.addSubview(g!)
-        }
+        } */
     }
     
     override func viewDidAppear(_ animated: Bool) {
