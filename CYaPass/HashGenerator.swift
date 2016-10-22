@@ -26,7 +26,8 @@ class HashGenerator{
         let hashBytes: [UInt8] = sha256AsBytes(clearTextData:xdata!)
     
         for item in hashBytes{
-            finalHash = finalHash + String(item, radix:16)
+            let h1 : String = String(format: "%02x", item)
+            finalHash = finalHash + h1 //String(item, radix:16)
             finalHashLength += 1
         }
     }
