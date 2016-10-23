@@ -10,23 +10,39 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     var maxCharLength : Int = 32
+    var changeVal : Int = 0
     
+    @IBOutlet weak var maxCharsSwitch: UISwitch!
+    @IBAction func MaxCharsValueChanged(_ sender: UIStepper) {
+        changeVal = Int(sender.value)
+        
+        updateCharVal()
+        
+        
+    }
+    
+    func updateCharVal(){
+        MaxCharsText.text = String(changeVal)
+    }
+    
+    @IBOutlet weak var maxCharsStepper: UIStepper!
     @IBOutlet weak var MaxCharsText: UITextField!
-    @IBAction func TouchCharCount(_ sender: AnyObject) {
+/*    @IBAction func TouchCharCount(_ sender: AnyObject) {
         
         var currentValue : Int = Int(MaxCharsText.text!)!
         maxCharLength = currentValue + 1
         MaxCharsText.text = String(maxCharLength)
         
-    }
+    } */
     @IBOutlet weak var UpperView: UIView!
     @IBOutlet weak var MainOutLabel: UILabel!
     var g : UIView! = nil
     @IBOutlet weak var TopView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        MaxCharsText.text = String(maxCharLength)
         
+        maxCharsStepper.value =  Double(maxCharLength)
+        MaxCharsText.text = String(maxCharsStepper.value)
     }
 
     override func didReceiveMemoryWarning() {

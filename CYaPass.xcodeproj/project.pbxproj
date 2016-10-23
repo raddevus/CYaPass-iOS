@@ -17,6 +17,7 @@
 		635526A81DAA8E8F00390466 /* SiteKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526A71DAA8E8F00390466 /* SiteKey.swift */; };
 		635526AA1DAA920500390466 /* HashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526A91DAA920500390466 /* HashGenerator.swift */; };
 		635526AC1DAA935C00390466 /* GridPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526AB1DAA935C00390466 /* GridPassView.swift */; };
+		6384D3851DBD381200522303 /* CyaSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384D3841DBD381200522303 /* CyaSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		635526A71DAA8E8F00390466 /* SiteKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteKey.swift; sourceTree = "<group>"; };
 		635526A91DAA920500390466 /* HashGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashGenerator.swift; sourceTree = "<group>"; };
 		635526AB1DAA935C00390466 /* GridPassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPassView.swift; sourceTree = "<group>"; };
+		6384D3841DBD381200522303 /* CyaSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyaSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				635526A71DAA8E8F00390466 /* SiteKey.swift */,
 				635526A91DAA920500390466 /* HashGenerator.swift */,
 				635526AB1DAA935C00390466 /* GridPassView.swift */,
+				6384D3841DBD381200522303 /* CyaSettings.swift */,
 			);
 			path = CYaPass;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				635526951DA9A47800390466 /* SettingsViewController.swift in Sources */,
 				635526AA1DAA920500390466 /* HashGenerator.swift in Sources */,
+				6384D3851DBD381200522303 /* CyaSettings.swift in Sources */,
 				635526A81DAA8E8F00390466 /* SiteKey.swift in Sources */,
 				635526911DA9A47800390466 /* AppDelegate.swift in Sources */,
 				635526931DA9A47800390466 /* MainViewController.swift in Sources */,
