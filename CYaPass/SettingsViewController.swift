@@ -9,14 +9,23 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    var maxCharLength : Int = 32
+    
+    @IBOutlet weak var MaxCharsText: UITextField!
+    @IBAction func TouchCharCount(_ sender: AnyObject) {
+        
+        var currentValue : Int = Int(MaxCharsText.text!)!
+        maxCharLength = currentValue + 1
+        MaxCharsText.text = String(maxCharLength)
+        
+    }
     @IBOutlet weak var UpperView: UIView!
     @IBOutlet weak var MainOutLabel: UILabel!
     var g : UIView! = nil
     @IBOutlet weak var TopView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        MaxCharsText.text = String(maxCharLength)
         
     }
 

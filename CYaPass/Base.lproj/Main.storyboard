@@ -20,20 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
-                                <frame key="frameInset" minX="89" minY="446" width="46" height="30"/>
-                                <state key="normal" title="Clear Grid"/>
-                                <connections>
-                                    <action selector="ClearGridButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="knp-dm-oG0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF">
-                                <frame key="frameInset" minX="280" minY="446" width="46" height="30"/>
-                                <state key="normal" title="Add Site Key"/>
-                                <connections>
-                                    <action selector="AddSiteButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="I3x-QZ-j2l"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yrl-9S-DHQ">
                                 <frame key="frameInset" minX="67" minY="67" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.94458484343384919" green="0.99117768925672212" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,45 +33,55 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="NEl-kB-13D"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by MainViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <frame key="frameInset" minX="89" minY="484" width="197" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="89r-nj-ClD">
-                                <frame key="frameInset" minX="173" minY="405" width="97" height="30"/>
-                                <color key="backgroundColor" red="0.77109899535705273" green="1" blue="0.6420241608866748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Sl-em-3HO">
+                                <frame key="frameInset" minX="55" minY="267" width="197" height="97"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
+                                        <state key="normal" title="Clear Grid"/>
+                                        <connections>
+                                            <action selector="ClearGridButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="knp-dm-oG0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by MainViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="89r-nj-ClD">
+                                        <color key="backgroundColor" red="0.77109899535705273" green="1" blue="0.6420241608866748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="wg7-A0-y1b"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF">
+                                        <state key="normal" title="Add Site Key"/>
+                                        <connections>
+                                            <action selector="AddSiteButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="I3x-QZ-j2l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="wg7-A0-y1b"/>
+                                    <constraint firstItem="89r-nj-ClD" firstAttribute="leading" secondItem="7Sl-em-3HO" secondAttribute="leading" constant="3" id="U3k-IP-vrc"/>
+                                    <constraint firstAttribute="trailing" secondItem="89r-nj-ClD" secondAttribute="trailing" constant="3" id="g8t-Ec-zgS"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Flh-F5-NCd" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="20" symbolic="YES" id="1FR-vw-kJQ"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="3e6-dZ-1B1"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="89r-nj-ClD" secondAttribute="bottom" constant="10" id="7Zm-2o-EWu" userLabel="Hash Label Outlet.top = Site Key Text Field.bottom + 2"/>
                             <constraint firstAttribute="bottom" secondItem="Flh-F5-NCd" secondAttribute="bottom" id="8nm-MI-w5R"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.5" id="9JL-LA-b2c"/>
-                            <constraint firstItem="89r-nj-ClD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="CXl-sO-Tng"/>
-                            <constraint firstItem="89r-nj-ClD" firstAttribute="top" secondItem="yrl-9S-DHQ" secondAttribute="bottom" constant="10" id="DPJ-oL-HRP" userLabel="Site Key Text Field.top = Top Grid View.bottom +2"/>
-                            <constraint firstItem="4xs-65-YDB" firstAttribute="top" secondItem="aQB-Mu-YrF" secondAttribute="bottom" constant="-30" id="EUv-zo-7qt" userLabel="Clear Grid Button.top = Add Site Key.bottom - 20"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="GZk-vn-CID"/>
                             <constraint firstAttribute="trailing" secondItem="Flh-F5-NCd" secondAttribute="trailing" constant="20" symbolic="YES" id="HON-v3-OLl"/>
-                            <constraint firstItem="4xs-65-YDB" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="-55" id="TDf-wu-Jbg"/>
-                            <constraint firstItem="aQB-Mu-YrF" firstAttribute="leading" secondItem="4xs-65-YDB" secondAttribute="trailing" constant="20" id="XOp-sv-V7l"/>
+                            <constraint firstItem="7Sl-em-3HO" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Xpz-cZ-4Kb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yrl-9S-DHQ" secondAttribute="trailing" id="a7p-DJ-XUg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aQB-Mu-YrF" secondAttribute="trailing" constant="20" id="bME-F2-VkB"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="4xs-65-YDB" secondAttribute="bottom" constant="8" id="cFl-Zz-ea8" userLabel="Hash Label Outlet.top = Clear Grid Button.bottom + 30"/>
                             <constraint firstItem="Flh-F5-NCd" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="hbu-O8-NUN"/>
-                            <constraint firstItem="89r-nj-ClD" firstAttribute="leading" secondItem="Flh-F5-NCd" secondAttribute="trailing" constant="20" id="ugs-Pj-Okv" userLabel="Site Key Text Field.leading = Site Key Picker.trailing + 2"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="vdB-aC-60G"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="xBZ-97-tjg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="89r-nj-ClD" secondAttribute="trailing" constant="20" id="yae-fD-ERr" userLabel="trailingMargin = Site Key Text Field.trailing + 10"/>
+                            <constraint firstItem="7Sl-em-3HO" firstAttribute="top" secondItem="yrl-9S-DHQ" secondAttribute="bottom" constant="5" id="vsU-ME-ljC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
@@ -113,15 +109,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jCd-ll-Rcb">
-                                <frame key="frameInset" minX="78" minY="74" width="240" height="128"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cnH-tq-aZu">
+                                <frame key="frameInset" minX="132" minY="62" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.25781443380867231" green="0.19386844108559043" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTt-7y-vYc">
+                                        <frame key="frameInset" width="168" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0W-VW-64X">
+                                                <frame key="frameInset" width="25" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="HzC-rL-Xs4">
+                                                <frame key="frameInset" minX="25" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="TouchCharCount:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Ym2-Pa-cRe"/>
+                                                </connections>
+                                            </stepper>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zmn-8e-5Fv">
+                                                <frame key="frameInset" minX="119" width="51" height="30"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="XS1-XE-NFQ"/>
+                    <connections>
+                        <outlet property="MaxCharsText" destination="F0W-VW-64X" id="eKz-XN-NwG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

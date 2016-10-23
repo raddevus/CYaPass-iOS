@@ -47,7 +47,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         if SiteKeyTextField.text != nil && !(SiteKeyTextField.text?.isEmpty)! {
             addNewSiteKey(key: SiteKeyTextField.text!)
             SiteKeyTextField.text = ""
-            [SiteKeyTextField, resignFirstResponder] as [Any];
+            //[SiteKeyTextField, resignFirstResponder] as [Any]
             
         }
     }
@@ -125,7 +125,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     
     override func viewDidLayoutSubviews() {
         if g == nil{
-        addSubView()
+            addSubView()
         }
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
