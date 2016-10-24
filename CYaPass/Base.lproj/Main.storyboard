@@ -129,7 +129,11 @@
                                                     <action selector="MaxCharsValueChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="4uh-2n-CL3"/>
                                                 </connections>
                                             </stepper>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zmn-8e-5Fv" userLabel="MaxLengthSwitch"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zmn-8e-5Fv" userLabel="MaxLengthSwitch">
+                                                <connections>
+                                                    <action selector="MaxLengthSwitchChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="asD-97-zyr"/>
+                                                </connections>
+                                            </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JR4-Gk-MwZ">
@@ -139,7 +143,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t7R-ka-nVe" userLabel="UppercaseSwitch"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t7R-ka-nVe" userLabel="UppercaseSwitch">
+                                                <connections>
+                                                    <action selector="AddUpperCaseSwitchChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="bmE-uS-cEA"/>
+                                                </connections>
+                                            </switch>
                                         </subviews>
                                     </stackView>
                                 </subviews>

@@ -110,7 +110,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             let hg: HashGenerator = HashGenerator(clearText:  g!.outValue + selectedItemValue)
             // ORIGINAL LINE FOLLOWS
             // let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)! + selectedItemValue)
-            SettingsViewController.maxCharsSwitch
+            
             HashLabelOutlet.text = hg.finalHash
             UIPasteboard.general.string = hg.finalHash
         }

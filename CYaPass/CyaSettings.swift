@@ -9,5 +9,9 @@
 import Foundation
 
 class CyaSettings {
-    // addsettings 
+    public static var isMaxLengthOn : Bool = false
+    
+    public static var maxPassLength : Int = 0
+    
+    public static var isUppercaseOn : Bool = false
 }

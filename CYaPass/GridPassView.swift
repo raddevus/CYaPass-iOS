@@ -173,7 +173,7 @@ class GridPassView : UIView{
             var plusPath = UIBezierPath()
             
             //set the path's line width to the height of the stroke
-            plusPath.lineWidth = 5
+            plusPath.lineWidth = 8
             
             //move the initial point of the path
             //to the start of the horizontal stroke

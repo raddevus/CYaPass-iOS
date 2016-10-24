@@ -30,6 +30,42 @@ class HashGenerator{
             finalHash = finalHash + h1 //String(item, radix:16)
             finalHashLength += 1
         }
+        if (CyaSettings.isMaxLengthOn){
+            
+            let index = finalHash.index(finalHash.startIndex, offsetBy: CyaSettings.maxPassLength)
+           
+            finalHash = finalHash.substring(to: index)
+        }
+        
+        if (CyaSettings.isUppercaseOn){
+            finalHash = finalHash.uppercased();
+           /* var startIndex : Int = 0
+            for count in 0...(finalHash.characters.count - 1){
+                switch (finalHash.characters.){
+                case "1": break
+                case "2": break
+                case "3": break
+                case "4": break
+                case "5": break
+                case "6": break
+                case "7": break
+                case "8": break
+                case "9": break
+                case "0": break
+                default :
+                    {
+                        startIndex = startIndex + 1
+                        continue
+                    }
+                }
+                
+            }
+            let idx = finalHash.index(finalHash.startIndex, offsetBy:3)
+            finalHash = finalHash.stringByReplacingCharactersInRange(
+                finalHash.startIndex..<finalHash.startIndex.advancedBy(3),
+                withString: "wh")*/
+        }
+        
     }
 
     func sha256AsBytes(clearTextData : Data) -> [UInt8] {

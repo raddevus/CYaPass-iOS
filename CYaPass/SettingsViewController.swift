@@ -12,13 +12,19 @@ class SettingsViewController: UIViewController {
     var maxCharLength : Int = 32
     var changeVal : Int = 0
     
+    @IBAction func MaxLengthSwitchChanged(_ sender: UISwitch) {
+        CyaSettings.isMaxLengthOn = sender.isOn
+    }
+    
+    @IBAction func AddUpperCaseSwitchChanged(_ sender: UISwitch) {
+        CyaSettings.isUppercaseOn = sender.isOn
+    }
     @IBOutlet weak var maxCharsSwitch: UISwitch!
+    
     @IBAction func MaxCharsValueChanged(_ sender: UIStepper) {
         changeVal = Int(sender.value)
-        
+        CyaSettings.maxPassLength = changeVal
         updateCharVal()
-        
-        
     }
     
     func updateCharVal(){
@@ -42,7 +48,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         maxCharsStepper.value =  Double(maxCharLength)
-        MaxCharsText.text = String(maxCharsStepper.value)
+        CyaSettings.maxPassLength = Int(maxCharsStepper.value)
+        MaxCharsText.text = String(Int(maxCharsStepper.value))
     }
 
     override func didReceiveMemoryWarning() {
