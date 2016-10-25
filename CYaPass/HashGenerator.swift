@@ -38,34 +38,47 @@ class HashGenerator{
         }
         
         if (CyaSettings.isUppercaseOn){
-            finalHash = finalHash.uppercased();
-           /* var startIndex : Int = 0
-            for count in 0...(finalHash.characters.count - 1){
-                switch (finalHash.characters.){
-                case "1": break
-                case "2": break
-                case "3": break
-                case "4": break
-                case "5": break
-                case "6": break
-                case "7": break
-                case "8": break
-                case "9": break
-                case "0": break
-                default :
-                    {
-                        startIndex = startIndex + 1
-                        continue
-                    }
-                }
-                
-            }
-            let idx = finalHash.index(finalHash.startIndex, offsetBy:3)
-            finalHash = finalHash.stringByReplacingCharactersInRange(
-                finalHash.startIndex..<finalHash.startIndex.advancedBy(3),
-                withString: "wh")*/
+            finalHash = addUppercase(target: &finalHash)
+           
         }
         
+    }
+    
+    func findFirstLetterIndex (_ phrase: String, foundChar : inout Character) -> Int{
+        var charCounter : Int = 0
+        for c in phrase.characters{
+            // print(c, terminator:"")
+            if ((c >= "A" && c <= "Z") || (c >= "a" && c <= "z") ){
+                // print()
+                foundChar = c
+                return charCounter
+            }
+            charCounter += 1
+        }
+        
+        return -1
+    }
+    
+    func addUppercase(target : inout String) -> String{
+        // takes the original string (target) and
+        // returns the string with the uppercase letter
+        // or, if there are no letters to uppercase returns the
+        // original unchagned string.
+        var outChar : Character = "0"
+        let idxFind = findFirstLetterIndex( target, foundChar: &outChar)
+        
+        if (idxFind > -1){
+            // if idxFind is greater than -1 then the method found a letter
+            target.remove(at: target.index(target.startIndex, offsetBy:idxFind))
+            //print (target)
+            
+            // Generate the replaceString using the outChar
+            let replaceString : String = String(outChar)
+            let replaceChar : Character = Character(replaceString.uppercased())
+           
+            target.insert( replaceChar, at: target.index(target.startIndex, offsetBy:idxFind))
+        }
+        return target
     }
 
     func sha256AsBytes(clearTextData : Data) -> [UInt8] {
