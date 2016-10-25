@@ -30,6 +30,13 @@ class HashGenerator{
             finalHash = finalHash + h1 //String(item, radix:16)
             finalHashLength += 1
         }
+        
+        if (CyaSettings.isSpecialCharsOn){
+            for c in CyaSettings.specialChars.characters{
+            finalHash.insert(c , at: finalHash.index(finalHash.startIndex, offsetBy:3))
+            }
+        }
+        
         if (CyaSettings.isMaxLengthOn){
             
             let index = finalHash.index(finalHash.startIndex, offsetBy: CyaSettings.maxPassLength)
@@ -41,6 +48,7 @@ class HashGenerator{
             finalHash = addUppercase(target: &finalHash)
            
         }
+        
         
     }
     

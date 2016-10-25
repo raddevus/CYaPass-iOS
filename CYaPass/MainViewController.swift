@@ -31,7 +31,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     
      override func viewDidLoad() {
         super.viewDidLoad()
-        self.SiteKeyTextField.delegate = self;
+        self.SiteKeyTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

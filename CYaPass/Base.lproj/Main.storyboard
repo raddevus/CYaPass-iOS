@@ -157,12 +157,19 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGI-re-n6b">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGI-re-n6b" userLabel="SpecialCharsTextField">
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="SpecialCharsEditingChanged:" destination="8rJ-Kc-sve" eventType="editingChanged" id="2RH-5C-PjQ"/>
+                                                </connections>
                                             </textField>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2WR-Rr-tcx" userLabel="AddSpecialCharsSwitch"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2WR-Rr-tcx" userLabel="AddSpecialCharsSwitch">
+                                                <connections>
+                                                    <action selector="AddSpecialCharsSwitchChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="VSp-Lo-q8a"/>
+                                                </connections>
+                                            </switch>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -178,6 +185,7 @@
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="XS1-XE-NFQ"/>
                     <connections>
                         <outlet property="MaxCharsText" destination="F0W-VW-64X" id="eKz-XN-NwG"/>
+                        <outlet property="SpecialCharsText" destination="CGI-re-n6b" id="KRm-70-Sty"/>
                         <outlet property="maxCharsStepper" destination="HzC-rL-Xs4" id="Rqy-BI-lTa"/>
                         <outlet property="maxCharsSwitch" destination="Zmn-8e-5Fv" id="AQs-PH-UQZ"/>
                     </connections>

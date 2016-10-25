@@ -14,4 +14,7 @@ class CyaSettings {
     public static var maxPassLength : Int = 0
     
     public static var isUppercaseOn : Bool = false
+    
+    public static var isSpecialCharsOn : Bool = false
+    public static var specialChars : String = ""
 }
