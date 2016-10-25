@@ -53,6 +53,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     }
     @IBAction func ClearGridButtonClicked(_ sender: AnyObject) {
         clearGrid()
+        HashLabelOutlet.text = ""
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
