@@ -14,28 +14,35 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var SpecialCharsText: UITextField!
     @IBAction func MaxLengthSwitchChanged(_ sender: UISwitch) {
-        CyaSettings.isMaxLengthOn = sender.isOn
+        MainViewController.cyaSettings.isMaxLengthOn = sender.isOn
+        MainViewController.cyaSettings.mainView.genUserHash()
     }
     
     @IBAction func AddUpperCaseSwitchChanged(_ sender: UISwitch) {
-        CyaSettings.isUppercaseOn = sender.isOn
+        MainViewController.cyaSettings.isUppercaseOn = sender.isOn
+        MainViewController.cyaSettings.mainView.genUserHash()
     }
     
     
     @IBAction func AddSpecialCharsSwitchChanged(_ sender: UISwitch) {
-        CyaSettings.isSpecialCharsOn = sender.isOn
+        MainViewController.cyaSettings.isSpecialCharsOn = sender.isOn
+        MainViewController.cyaSettings.mainView.genUserHash()
     }
     
     @IBAction func SpecialCharsEditingChanged(_ sender: UITextField) {
-        CyaSettings.specialChars = sender.text!
+        MainViewController.cyaSettings.specialChars = sender.text!
     }
   
     @IBOutlet weak var maxCharsSwitch: UISwitch!
     
     @IBAction func MaxCharsValueChanged(_ sender: UIStepper) {
         changeVal = Int(sender.value)
-        CyaSettings.maxPassLength = changeVal
+        MainViewController.cyaSettings.maxPassLength = changeVal
         updateCharVal()
+        
+            MainViewController.cyaSettings.mainView.genUserHash()
+ 
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -64,7 +71,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.SpecialCharsText.delegate = self
         maxCharsStepper.value =  Double(maxCharLength)
-        CyaSettings.maxPassLength = Int(maxCharsStepper.value)
+        MainViewController.cyaSettings.maxPassLength = Int(maxCharsStepper.value)
         MaxCharsText.text = String(Int(maxCharsStepper.value))
     }
 

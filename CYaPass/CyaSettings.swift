@@ -9,12 +9,18 @@
 import Foundation
 
 class CyaSettings {
-    public static var isMaxLengthOn : Bool = false
+    public var isMaxLengthOn : Bool = false
     
-    public static var maxPassLength : Int = 0
+    public var maxPassLength : Int = 0
     
-    public static var isUppercaseOn : Bool = false
+    public var isUppercaseOn : Bool = false
     
-    public static var isSpecialCharsOn : Bool = false
-    public static var specialChars : String = ""
+    public var isSpecialCharsOn : Bool = false
+    public var specialChars : String = ""
+    public var shapeValue: String!
+    public var mainView :MainViewController
+    
+    init (_ mainView : MainViewController){
+        self.mainView = mainView
+    }
 }

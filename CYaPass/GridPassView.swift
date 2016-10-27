@@ -11,7 +11,7 @@ import UIKit
 
 class GridPassView : UIView{
     var touchPoints : [CGPoint]! = []
-    var outValue : String!
+    
     var Width : Int! = nil
     var Height : Int! = nil
     var hitTestIdx : Int! = nil
@@ -24,9 +24,9 @@ class GridPassView : UIView{
     var cellSize : Int = 0
     var numOfCells :Int = 0
     var previousPointExists : Bool = false
-    //var userShape : Set<LineSegment> = Set<LineSegment>()
+
     var allPosts : [CGPoint]! = []
-    //var LineSegments : [LineSegment]! = []
+
     var us : UserPath = UserPath()
     var currentLocation : CGPoint! = nil
     var previousPoint : CGPoint! = nil
@@ -248,7 +248,7 @@ class GridPassView : UIView{
             DrawUserPath()
             setNeedsDisplay()
             if us.PostValue != nil{
-                outValue = String(us.PostValue)
+                MainViewController.cyaSettings.shapeValue = String(us.PostValue)
                 self.superview?.touchesBegan(touches, with: event)
             }
         }

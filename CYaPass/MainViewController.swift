@@ -28,10 +28,16 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     let blueFontColor = UIColor(red: 240/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
     let greenFontColor = UIColor(red: 120/255.0, green: 100/255.0, blue: 75/255.0, alpha: 1.0)
     var siteKeyPickerValues :[String] = ["computer", "appleId", "linkedin"]
+    public static var cyaSettings : CyaSettings!
+    
+
+  
     
      override func viewDidLoad() {
         super.viewDidLoad()
         self.SiteKeyTextField.delegate = self
+        
+        MainViewController.cyaSettings = CyaSettings(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,7 +97,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     
     func clearGrid(){
         addSubView(forceRemoveGridView: true)
-        
+        UIPasteboard.general.items.removeAll()
     }
     
     func addNewSiteKey(key : String){
@@ -105,17 +111,15 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     }
     
     func genUserHash(){
-        if g?.outValue != nil{
+        if MainViewController.cyaSettings.shapeValue != nil{
             
             let selectedItemValue :String = siteKeyPickerValues[SiteKeyPicker.selectedRow(inComponent: 0)]
-            let hg: HashGenerator = HashGenerator(clearText:  g!.outValue + selectedItemValue)
-            // ORIGINAL LINE FOLLOWS
-            // let hg: HashGenerator = HashGenerator(clearText: (g?.outValue)! + selectedItemValue)
+            let hg: HashGenerator = HashGenerator(clearText:  MainViewController.cyaSettings.shapeValue + selectedItemValue)
             
             HashLabelOutlet.text = hg.finalHash
             UIPasteboard.general.string = hg.finalHash
         }
-        // ###### following line allows testing of postvalues
+        // ###### following line allows testing of postvalues;
         // HashLabelOutlet.text = String(describing: g?.us.PostValue)
     
         

@@ -31,20 +31,20 @@ class HashGenerator{
             finalHashLength += 1
         }
         
-        if (CyaSettings.isSpecialCharsOn){
-            for c in CyaSettings.specialChars.characters{
+        if (MainViewController.cyaSettings.isSpecialCharsOn){
+            for c in MainViewController.cyaSettings.specialChars.characters{
             finalHash.insert(c , at: finalHash.index(finalHash.startIndex, offsetBy:3))
             }
         }
         
-        if (CyaSettings.isMaxLengthOn){
+        if (MainViewController.cyaSettings.isMaxLengthOn){
             
-            let index = finalHash.index(finalHash.startIndex, offsetBy: CyaSettings.maxPassLength)
+            let index = finalHash.index(finalHash.startIndex, offsetBy: MainViewController.cyaSettings.maxPassLength)
            
             finalHash = finalHash.substring(to: index)
         }
         
-        if (CyaSettings.isUppercaseOn){
+        if (MainViewController.cyaSettings.isUppercaseOn){
             finalHash = addUppercase(target: &finalHash)
            
         }
