@@ -60,6 +60,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         if SiteKeyTextField.text != nil && !(SiteKeyTextField.text?.isEmpty)! {
             addNewSiteKey(key: SiteKeyTextField.text!)
             SiteKeyTextField.text = ""
+            SiteKeyPicker.selectRow(siteKeyPickerValues.count-1, inComponent: 0, animated: true)
+            genUserHash()
             //[SiteKeyTextField, resignFirstResponder] as [Any]
             
         }
