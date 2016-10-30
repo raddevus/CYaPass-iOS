@@ -49,6 +49,13 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         return false
     }
     
+    @IBAction func DeleteSiteClicked(_ sender: UIButton) {
+        let selItemIdx : Int  = SiteKeyPicker.selectedRow(inComponent: 0)
+        siteKeyPickerValues.remove(at: selItemIdx )
+        SiteKeyPicker.reloadAllComponents()
+        genUserHash()
+    }
+    
     @IBAction func AddSiteButtonClicked(_ sender: AnyObject) {
         if SiteKeyTextField.text != nil && !(SiteKeyTextField.text?.isEmpty)! {
             addNewSiteKey(key: SiteKeyTextField.text!)
@@ -57,6 +64,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             
         }
     }
+    
     @IBAction func ClearGridButtonClicked(_ sender: AnyObject) {
         clearGrid()
         HashLabelOutlet.text = ""

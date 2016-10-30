@@ -34,7 +34,7 @@
                                 </connections>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Sl-em-3HO">
-                                <frame key="frameInset" minX="55" minY="267" width="197" height="97"/>
+                                <frame key="frameInset" minX="55" minY="267" width="323" height="97"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
                                         <state key="normal" title="Clear Grid"/>
@@ -56,12 +56,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF">
-                                        <state key="normal" title="Add Site Key"/>
-                                        <connections>
-                                            <action selector="AddSiteButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="I3x-QZ-j2l"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4e-kR-0qQ">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF">
+                                                <frame key="frameInset" width="87" height="30"/>
+                                                <state key="normal" title="Add Site Key"/>
+                                                <connections>
+                                                    <action selector="AddSiteButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="I3x-QZ-j2l"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-5M-lye">
+                                                <frame key="frameInset" minX="87" width="236" height="30"/>
+                                                <state key="normal" title="Delete Site"/>
+                                                <connections>
+                                                    <action selector="DeleteSiteClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="jVK-wj-p2Y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="89r-nj-ClD" firstAttribute="leading" secondItem="7Sl-em-3HO" secondAttribute="leading" constant="3" id="U3k-IP-vrc"/>
@@ -77,9 +89,11 @@
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.5" id="9JL-LA-b2c"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="GZk-vn-CID"/>
                             <constraint firstAttribute="trailing" secondItem="Flh-F5-NCd" secondAttribute="trailing" constant="20" symbolic="YES" id="HON-v3-OLl"/>
+                            <constraint firstItem="7Sl-em-3HO" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="Qqz-lK-o1v"/>
                             <constraint firstItem="7Sl-em-3HO" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Xpz-cZ-4Kb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yrl-9S-DHQ" secondAttribute="trailing" id="a7p-DJ-XUg"/>
                             <constraint firstItem="Flh-F5-NCd" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="hbu-O8-NUN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Sl-em-3HO" secondAttribute="trailing" constant="10" id="urP-21-0of"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="vdB-aC-60G"/>
                             <constraint firstItem="7Sl-em-3HO" firstAttribute="top" secondItem="yrl-9S-DHQ" secondAttribute="bottom" constant="5" id="vsU-ME-ljC"/>
                         </constraints>
