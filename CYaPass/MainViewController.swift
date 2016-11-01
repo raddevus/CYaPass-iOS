@@ -14,8 +14,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
    
    
     @IBOutlet weak var TopGridView: UIView!
-    
-    @IBOutlet weak var SiteKeyTextField: UITextField!
+  
+    var textField : UITextField? = nil
     
     @IBOutlet weak var SiteKeyPicker: UIPickerView!
     @IBOutlet weak var ClearGridButton: UIButton!
@@ -27,17 +27,17 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     let gridViewTag = 100
     let blueFontColor = UIColor(red: 240/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
     let greenFontColor = UIColor(red: 120/255.0, green: 100/255.0, blue: 75/255.0, alpha: 1.0)
-    var siteKeyPickerValues :[String] = ["computer", "appleId", "linkedin"]
+    var siteKeyPickerValues :[String] = ["first", "bankone", "gmail"]
     public static var cyaSettings : CyaSettings!
     
-
-  
+    
+    
     
      override func viewDidLoad() {
         super.viewDidLoad()
-        self.SiteKeyTextField.delegate = self
         
         MainViewController.cyaSettings = CyaSettings(self)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,22 +50,66 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     }
     
     @IBAction func DeleteSiteClicked(_ sender: UIButton) {
-        let selItemIdx : Int  = SiteKeyPicker.selectedRow(inComponent: 0)
-        siteKeyPickerValues.remove(at: selItemIdx )
-        SiteKeyPicker.reloadAllComponents()
-        genUserHash()
+        
+        let selItemIdx : Int  = self.SiteKeyPicker.selectedRow(inComponent: 0)
+        let currentKey : String = siteKeyPickerValues[selItemIdx]
+        let alert = UIAlertController(title: "Delete key?", message: "Are you sure you want to delete the item: \(currentKey)?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                
+                
+                self.siteKeyPickerValues.remove(at: selItemIdx)
+                self.SiteKeyPicker.reloadAllComponents()
+                self.genUserHash()
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func configurationTextField(textField: UITextField!)
+    {
+        print("configurat hire the TextField")
+        
+        if let tField = textField {
+            
+            self.textField = textField!        //Save reference to the UITextField
+            self.textField?.text = ""
+        }
     }
     
     @IBAction func AddSiteButtonClicked(_ sender: AnyObject) {
-        if SiteKeyTextField.text != nil && !(SiteKeyTextField.text?.isEmpty)! {
-            addNewSiteKey(key: SiteKeyTextField.text!)
-            SiteKeyTextField.text = ""
-            SiteKeyPicker.selectRow(siteKeyPickerValues.count-1, inComponent: 0, animated: true)
-            genUserHash()
-            //[SiteKeyTextField, resignFirstResponder] as [Any]
-            
-        }
-    }
+        
+        let alert = UIAlertController(title: "Add New Key?", message: "Please type the key you'd like to enter", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addTextField(configurationHandler: configurationTextField)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                if self.textField?.text != nil && !(self.textField?.text?.isEmpty)! {
+                    self.addNewSiteKey(key: (self.textField?.text!)!)
+                    self.textField?.text = ""
+                    self.SiteKeyPicker.selectRow(self.siteKeyPickerValues.count-1, inComponent: 0, animated: true)
+                    self.genUserHash()
+                    //[SiteKeyTextField, resignFirstResponder] as [Any]
+                    
+                }
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+            }
     
     @IBAction func ClearGridButtonClicked(_ sender: AnyObject) {
         clearGrid()
