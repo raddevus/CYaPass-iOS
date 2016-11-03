@@ -28,7 +28,7 @@
                                 <color key="backgroundColor" red="0.94458484343384919" green="0.99117768925672212" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5EO-xj-W9v">
-                                <rect key="frame" x="26" y="373.5" width="323" height="9000000030"/>
+                                <rect key="frame" x="26" y="373.5" width="323" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
@@ -37,16 +37,17 @@
                                             <action selector="ClearGridButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="knp-dm-oG0"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L" userLabel="Hash Label">
-                                        <rect key="frame" x="0.0" y="30" width="323" height="9000000000"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L" userLabel="Hash Label">
+                                <rect key="frame" x="26" y="20" width="323" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qco-lS-7Rj">
-                                <rect key="frame" x="10" y="373.5" width="355" height="160"/>
+                                <rect key="frame" x="10" y="448" width="355" height="160"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-F5-NCd">
                                         <rect key="frame" x="0.0" y="0.0" width="177.5" height="160"/>
@@ -100,12 +101,12 @@
                         <constraints>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="3e6-dZ-1B1"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.5" id="9JL-LA-b2c"/>
-                            <constraint firstItem="qco-lS-7Rj" firstAttribute="top" secondItem="yrl-9S-DHQ" secondAttribute="bottom" constant="10" id="FKC-Us-N2x"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="GZk-vn-CID"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5EO-xj-W9v" secondAttribute="trailing" constant="10" id="J4t-IT-HrL"/>
                             <constraint firstAttribute="trailing" secondItem="qco-lS-7Rj" secondAttribute="trailing" constant="10" id="VBO-mR-Id5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yrl-9S-DHQ" secondAttribute="trailing" id="a7p-DJ-XUg"/>
                             <constraint firstItem="qco-lS-7Rj" firstAttribute="centerX" secondItem="yrl-9S-DHQ" secondAttribute="centerX" id="drC-ho-OJW"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="qco-lS-7Rj" secondAttribute="bottom" constant="10" id="fR1-gC-ZWP"/>
                             <constraint firstItem="5EO-xj-W9v" firstAttribute="top" secondItem="yrl-9S-DHQ" secondAttribute="bottom" constant="10" id="iWK-M6-pUp"/>
                             <constraint firstItem="5EO-xj-W9v" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="jY8-a0-5W4"/>
                             <constraint firstItem="yrl-9S-DHQ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="10" id="vdB-aC-60G"/>
