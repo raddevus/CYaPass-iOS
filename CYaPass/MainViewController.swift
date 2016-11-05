@@ -9,10 +9,6 @@
 import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate{
-
-    
-   
-   
     @IBOutlet weak var TopGridView: UIView!
   
     var textField : UITextField? = nil
@@ -27,10 +23,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     let gridViewTag = 100
     let blueFontColor = UIColor(red: 240/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
     let greenFontColor = UIColor(red: 120/255.0, green: 100/255.0, blue: 75/255.0, alpha: 1.0)
-    var siteKeyPickerValues :[String] = ["first", "bankone", "gmail"]
+    var siteKeyPickerValues :[String] = []
     public static var cyaSettings : CyaSettings!
-    
-    
     
     
      override func viewDidLoad() {
@@ -50,7 +44,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     }
     
     @IBAction func DeleteSiteClicked(_ sender: UIButton) {
-        
+        if (siteKeyPickerValues.count <= 0) {return }
         let selItemIdx : Int  = self.SiteKeyPicker.selectedRow(inComponent: 0)
         let currentKey : String = siteKeyPickerValues[selItemIdx]
         let alert = UIAlertController(title: "Delete key?", message: "Are you sure you want to delete the item: \(currentKey)?", preferredStyle: UIAlertControllerStyle.alert)
@@ -63,6 +57,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
                 self.siteKeyPickerValues.remove(at: selItemIdx)
                 self.SiteKeyPicker.reloadAllComponents()
                 self.genUserHash()
+                UserDefaults.standard.set(self.siteKeyPickerValues, forKey: "siteKeys")
+                UserDefaults.standard.synchronize()
                 
             case .cancel:
                 print("cancel")
@@ -74,7 +70,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         self.present(alert, animated: true, completion: nil)
     }
     
-    func configurationTextField(textField: UITextField!)
+   func configurationTextField(textField: UITextField!)
     {
         print("configurat hire the TextField")
         
@@ -96,9 +92,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
                 if self.textField?.text != nil && !(self.textField?.text?.isEmpty)! {
                     self.addNewSiteKey(key: (self.textField?.text!)!)
                     self.textField?.text = ""
-                    self.SiteKeyPicker.selectRow(self.siteKeyPickerValues.count-1, inComponent: 0, animated: true)
+                    self.SiteKeyPicker.selectRow((self.siteKeyPickerValues.count)-1, inComponent: 0, animated: true)
                     self.genUserHash()
-                    //[SiteKeyTextField, resignFirstResponder] as [Any]
+                    UserDefaults.standard.set(self.siteKeyPickerValues, forKey: "siteKeys")
+                    UserDefaults.standard.synchronize()
                     
                 }
             case .cancel:
@@ -117,11 +114,17 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return siteKeyPickerValues.count
+        if (siteKeyPickerValues != nil){
+            return siteKeyPickerValues.count
+        }
+        return 0
     }
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
-        return siteKeyPickerValues[row]
+        if (siteKeyPickerValues != nil && siteKeyPickerValues.count > 0){
+            return siteKeyPickerValues[row]
+        }
+        return nil
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -167,7 +170,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     func genUserHash(){
         if MainViewController.cyaSettings.shapeValue != nil{
             
+            if (siteKeyPickerValues.count <= 0){
+                return
+            }
             let selectedItemValue :String = siteKeyPickerValues[SiteKeyPicker.selectedRow(inComponent: 0)]
+
             let hg: HashGenerator = HashGenerator(clearText:  MainViewController.cyaSettings.shapeValue + selectedItemValue)
             
             HashLabelOutlet.text = hg.finalHash
@@ -186,6 +193,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     override func viewDidLayoutSubviews() {
         if g == nil{
             addSubView()
+        }
+        if (UserDefaults.standard.array(forKey : "siteKeys") != nil){
+             siteKeyPickerValues = UserDefaults.standard.array(forKey: "siteKeys") as! [String]
         }
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
