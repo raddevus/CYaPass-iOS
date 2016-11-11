@@ -228,7 +228,7 @@ class GridPassView : UIView{
             return;
         }
         
-        us.append(currentPoint: currentPoint, postValue: hitTestIdx)
+        us.append(currentPoint: currentPoint, postValue: hitTestIdx + (hitTestIdx * (hitTestIdx / 6) * 10))
         us.CalculateGeometricSaltValue()
         DrawHighlight()
     }
