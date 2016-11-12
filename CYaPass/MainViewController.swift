@@ -16,6 +16,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     @IBOutlet weak var SiteKeyPicker: UIPickerView!
     @IBOutlet weak var ClearGridButton: UIButton!
     @IBOutlet weak var HashLabelOutlet: UILabel!
+    @IBOutlet weak var ShowPasswordSwitch: UISwitch!
+    
+    
     var g :GridPassView? = nil
     var screenSize: CGRect? = nil
     var topGridViewWidth : Int? = nil
@@ -41,6 +44,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    @IBAction func ShowPasswordSwitchChanged(_ sender: UISwitch) {
+        genUserHash()
     }
     
     @IBAction func DeleteSiteClicked(_ sender: UIButton) {
@@ -155,6 +162,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     func clearGrid(){
         addSubView(forceRemoveGridView: true)
         UIPasteboard.general.items.removeAll()
+        MainViewController.cyaSettings.shapeValue = nil
     }
     
     func addNewSiteKey(key : String){
@@ -174,10 +182,14 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
                 return
             }
             let selectedItemValue :String = siteKeyPickerValues[SiteKeyPicker.selectedRow(inComponent: 0)]
-
+            if (MainViewController.cyaSettings.shapeValue == "0") {return}
             let hg: HashGenerator = HashGenerator(clearText:  MainViewController.cyaSettings.shapeValue + selectedItemValue)
-            
-            HashLabelOutlet.text = hg.finalHash
+            if (ShowPasswordSwitch.isOn){
+                HashLabelOutlet.text = hg.finalHash
+            }
+            else{
+                HashLabelOutlet.text = ""
+            }
             UIPasteboard.general.string = hg.finalHash
         }
         // ###### following line allows testing of postvalues;
