@@ -43,16 +43,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qco-lS-7Rj">
-                                <rect key="frame" x="10" y="480" width="355" height="128"/>
+                                <rect key="frame" x="10" y="485" width="355" height="123"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-F5-NCd">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="123"/>
                                         <connections>
                                             <outlet property="delegate" destination="9pv-A4-QxB" id="NEl-kB-13D"/>
                                         </connections>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3CA-Je-wLd">
-                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="128"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="123"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RGi-kZ-GKP">
                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
@@ -75,7 +75,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsa-AN-Oy4">
-                                                <rect key="frame" x="0.0" y="90" width="177.5" height="38"/>
+                                                <rect key="frame" x="0.0" y="90" width="177.5" height="33"/>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -90,19 +90,22 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDE-bk-Kvm">
-                                <rect key="frame" x="21" y="427" width="333" height="50"/>
+                                <rect key="frame" x="21" y="427" width="333" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L" userLabel="Hash Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="166.5" height="50"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L" userLabel="Hash Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ibB-EQ-GcD"/>
+                                            <constraint firstAttribute="height" constant="55" id="ibB-EQ-GcD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Frz-Zv-NPb">
-                                        <rect key="frame" x="166.5" y="0.0" width="168.5" height="50"/>
+                                    <switch opaque="NO" contentMode="right" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Frz-Zv-NPb" userLabel="ShowPassSwitch">
+                                        <rect key="frame" x="293" y="0.0" width="42" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="e9d-gC-4gd"/>
+                                        </constraints>
                                     </switch>
                                 </subviews>
                                 <constraints>
