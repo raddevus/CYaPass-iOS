@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Main-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="MainViewController" customModule="CYaPass" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" userLabel="Main" customClass="MainViewController" customModule="CYaPass" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -137,7 +137,7 @@
                             <constraint firstItem="aDE-bk-Kvm" firstAttribute="top" secondItem="5EO-xj-W9v" secondAttribute="bottom" constant="3" id="wjJ-5S-IZf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="first" id="acW-dT-cKf" userLabel="Main"/>
                     <connections>
                         <outlet property="ClearGridButton" destination="4xs-65-YDB" id="wNS-4h-ild"/>
                         <outlet property="HashLabelOutlet" destination="A5M-7J-77L" id="Rmp-58-vU0"/>
@@ -150,7 +150,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SettingsViewController" customModule="CYaPass" customModuleProvider="target" sceneMemberID="viewController">
@@ -275,7 +275,7 @@
                             <constraint firstItem="cnH-tq-aZu" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="5" id="z95-RV-wjH" userLabel="Stack View.leading = leadingMargin + 15"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="XS1-XE-NFQ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="XS1-XE-NFQ" userLabel="Settings"/>
                     <connections>
                         <outlet property="MaxCharsText" destination="F0W-VW-64X" id="eKz-XN-NwG"/>
                         <outlet property="SpecialCharsText" destination="CGI-re-n6b" id="KRm-70-Sty"/>
