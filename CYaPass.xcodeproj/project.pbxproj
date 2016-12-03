@@ -18,6 +18,7 @@
 		635526AA1DAA920500390466 /* HashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526A91DAA920500390466 /* HashGenerator.swift */; };
 		635526AC1DAA935C00390466 /* GridPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526AB1DAA935C00390466 /* GridPassView.swift */; };
 		6384D3851DBD381200522303 /* CyaSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384D3841DBD381200522303 /* CyaSettings.swift */; };
+		63A3A67E1DF32F23001DF72B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		635526A91DAA920500390466 /* HashGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashGenerator.swift; sourceTree = "<group>"; };
 		635526AB1DAA935C00390466 /* GridPassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPassView.swift; sourceTree = "<group>"; };
 		6384D3841DBD381200522303 /* CyaSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyaSettings.swift; sourceTree = "<group>"; };
+		63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		6355268F1DA9A47800390466 /* CYaPass */ = {
 			isa = PBXGroup;
 			children = (
+				63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */,
 				635526A41DA9BF4500390466 /* MainBridge.h */,
 				635526901DA9A47800390466 /* AppDelegate.swift */,
 				635526921DA9A47800390466 /* MainViewController.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6355269D1DA9A47900390466 /* LaunchScreen.storyboard in Resources */,
+				63A3A67E1DF32F23001DF72B /* GoogleService-Info.plist in Resources */,
 				6355269A1DA9A47900390466 /* Assets.xcassets in Resources */,
 				635526981DA9A47800390466 /* Main.storyboard in Resources */,
 			);
@@ -291,7 +295,7 @@
 				INFOPLIST_FILE = CYaPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raddevus.CYaPass;
+				PRODUCT_BUNDLE_IDENTIFIER = us.raddev.CYaPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = CYaPass/MainBridge.h;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = CYaPass/MainBridge.h;
@@ -307,7 +311,7 @@
 				INFOPLIST_FILE = CYaPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.raddevus.CYaPass;
+				PRODUCT_BUNDLE_IDENTIFIER = us.raddev.CYaPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = CYaPass/MainBridge.h;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = CYaPass/MainBridge.h;
