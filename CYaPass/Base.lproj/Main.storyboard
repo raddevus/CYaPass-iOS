@@ -28,10 +28,11 @@
                                 <color key="backgroundColor" red="0.94458484343384919" green="0.99117768925672212" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5EO-xj-W9v">
-                                <rect key="frame" x="26" y="374" width="323" height="50"/>
+                                <rect key="frame" x="26" y="374" width="323" height="25"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="25"/>
+                                        <color key="backgroundColor" red="0.98107949293128738" green="0.98704663210207255" blue="0.72938707269402969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Clear Grid"/>
                                         <connections>
                                             <action selector="ClearGridButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="knp-dm-oG0"/>
@@ -39,49 +40,45 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Bft-fP-zRF"/>
+                                    <constraint firstAttribute="height" constant="25" id="Bft-fP-zRF"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qco-lS-7Rj">
-                                <rect key="frame" x="10" y="485" width="355" height="123"/>
+                                <rect key="frame" x="10" y="460" width="355" height="148"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-F5-NCd">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="123"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="148"/>
                                         <connections>
                                             <outlet property="delegate" destination="9pv-A4-QxB" id="NEl-kB-13D"/>
                                         </connections>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3CA-Je-wLd">
-                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="123"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="148"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RGi-kZ-GKP">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF" userLabel="AddSiteKey">
-                                                <rect key="frame" x="0.0" y="30" width="177.5" height="30"/>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF" userLabel="AddSiteKey">
+                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="73"/>
+                                                <color key="backgroundColor" red="0.98107949293128738" green="0.98704663210207255" blue="0.72938707269402969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Add"/>
                                                 <connections>
                                                     <action selector="AddSiteButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="I3x-QZ-j2l"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax5-1a-YPA" customClass="GADBannerView">
+                                                <rect key="frame" x="0.0" y="73" width="177.5" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-5M-lye" userLabel="Delete">
-                                                <rect key="frame" x="0.0" y="60" width="177.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="123" width="177.5" height="25"/>
+                                                <color key="backgroundColor" red="0.98107949293128738" green="0.98704663210207255" blue="0.72938707269402969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="M3K-lM-Q2e"/>
+                                                    <constraint firstAttribute="height" constant="25" id="M3K-lM-Q2e"/>
                                                 </constraints>
                                                 <state key="normal" title="Delete"/>
                                                 <connections>
                                                     <action selector="DeleteSiteClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="jVK-wj-p2Y"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsa-AN-Oy4">
-                                                <rect key="frame" x="0.0" y="90" width="177.5" height="33"/>
-                                            </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="aQB-Mu-YrF" firstAttribute="height" secondItem="RGi-kZ-GKP" secondAttribute="height" id="6er-Tq-s54"/>
-                                            <constraint firstItem="oYv-5M-lye" firstAttribute="height" secondItem="RGi-kZ-GKP" secondAttribute="height" id="ImA-Ox-20f"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -90,10 +87,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDE-bk-Kvm">
-                                <rect key="frame" x="21" y="427" width="333" height="55"/>
+                                <rect key="frame" x="21" y="402" width="333" height="55"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L" userLabel="Hash Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="293" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="55"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="ibB-EQ-GcD"/>
                                         </constraints>
@@ -102,9 +99,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="right" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Frz-Zv-NPb" userLabel="ShowPassSwitch">
-                                        <rect key="frame" x="293" y="0.0" width="42" height="55"/>
+                                        <rect key="frame" x="283" y="0.0" width="52" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="e9d-gC-4gd"/>
+                                            <constraint firstAttribute="width" constant="50" id="e9d-gC-4gd"/>
                                         </constraints>
                                         <connections>
                                             <action selector="ShowPasswordSwitchChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="BAe-jF-p30"/>
@@ -139,6 +136,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="first" id="acW-dT-cKf" userLabel="Main"/>
                     <connections>
+                        <outlet property="AdMobs" destination="Ax5-1a-YPA" id="JMG-CR-BzI"/>
                         <outlet property="ClearGridButton" destination="4xs-65-YDB" id="wNS-4h-ild"/>
                         <outlet property="HashLabelOutlet" destination="A5M-7J-77L" id="Rmp-58-vU0"/>
                         <outlet property="ShowPasswordSwitch" destination="Frz-Zv-NPb" id="KeP-um-l3Q"/>
@@ -200,7 +198,6 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCz-wc-7lg">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="49"/>
-                                                <color key="backgroundColor" red="0.77109899540000004" green="1" blue="0.64202416090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.77109899540000004" green="1" blue="0.64202416090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -227,7 +224,6 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76u-9s-TpW">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="49"/>
-                                                <color key="backgroundColor" red="0.77109899540000004" green="1" blue="0.64202416090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="jMY-tI-ycK"/>
                                                 </constraints>
@@ -247,6 +243,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGI-re-n6b" userLabel="SpecialCharsTextField">
                                                 <rect key="frame" x="105" y="0.0" width="179" height="31"/>
                                                 <color key="backgroundColor" red="0.76585101005653022" green="0.91724912761432531" blue="0.94559585489999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" hint="type special chars here"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
