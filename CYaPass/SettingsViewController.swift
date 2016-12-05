@@ -6,11 +6,13 @@
 //  Copyright © 2016 roger deutsch. All rights reserved.
 //
 
+import GoogleMobileAds
 import UIKit
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
     var maxCharLength : Int = 32
     var changeVal : Int = 0
+    
     
     @IBOutlet weak var SpecialCharsText: UITextField!
     @IBAction func MaxLengthSwitchChanged(_ sender: UISwitch) {
@@ -33,8 +35,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         MainViewController.cyaSettings.specialChars = sender.text!
     }
   
-    @IBOutlet weak var maxCharsSwitch: UISwitch!
-    
     @IBAction func MaxCharsValueChanged(_ sender: UIStepper) {
         changeVal = Int(sender.value)
         MainViewController.cyaSettings.maxPassLength = changeVal
@@ -56,23 +56,31 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var maxCharsStepper: UIStepper!
     @IBOutlet weak var MaxCharsText: UITextField!
-/*    @IBAction func TouchCharCount(_ sender: AnyObject) {
-        
-        var currentValue : Int = Int(MaxCharsText.text!)!
-        maxCharLength = currentValue + 1
-        MaxCharsText.text = String(maxCharLength)
-        
-    } */
-    @IBOutlet weak var UpperView: UIView!
-    @IBOutlet weak var MainOutLabel: UILabel!
-    var g : UIView! = nil
-    @IBOutlet weak var TopView: UIView!
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.SpecialCharsText.delegate = self
         maxCharsStepper.value =  Double(maxCharLength)
         MainViewController.cyaSettings.maxPassLength = Int(maxCharsStepper.value)
         MaxCharsText.text = String(Int(maxCharsStepper.value))
+         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+        
+        
+    }
+    
+ 
+   
+    @IBOutlet weak var AdMobs: GADBannerView!
+   
+    @IBOutlet weak var SuperView: UIView!
+    func loadAd(){
+
+       // AdMobs.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+    AdMobs.adUnitID = "ca-app-pub-6286879032545261/2319897125"
+        AdMobs.rootViewController = self
+       AdMobs.load(GADRequest())
+       //SuperView.backgroundColor = UIColor.black;
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,7 +89,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-       /* var width : Int = Int(UpperView.frame.width)
+        
+        /* var width : Int = Int(UpperView.frame.width)
         var height : Int = Int(UpperView.frame.height)
         MainOutLabel.text = String(describing: width) + "  " + String(describing: height)
         if (g == nil){
@@ -94,7 +103,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        loadAd()
     }
 
 }

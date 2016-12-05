@@ -98,7 +98,7 @@ class GridPassView : UIView{
         for cellCount in 0...numOfCells{
       
         //create the path
-        var plusPath = UIBezierPath()
+        let plusPath = UIBezierPath()
         
         //set the path's line width to the height of the stroke
         plusPath.lineWidth = 1.5
@@ -125,7 +125,7 @@ class GridPassView : UIView{
         for cellCount in 0...numOfCells{
             
             //create the path
-            var plusPath = UIBezierPath()
+            let plusPath = UIBezierPath()
             
             //set the path's line width to the height of the stroke
             plusPath.lineWidth = 2
@@ -156,7 +156,7 @@ class GridPassView : UIView{
             startAngle: CGFloat(0),
             endAngle:CGFloat(M_PI * 2),
             clockwise: true)
-        var shapeLayer = CAShapeLayer()
+        let shapeLayer = CAShapeLayer()
         shapeLayer.path = circlePath.cgPath
         
         shapeLayer.fillColor = transparent.cgColor
@@ -170,7 +170,7 @@ class GridPassView : UIView{
         //if us.allSegments.count < 1 {return}
         
         for ls in us.allSegments  {
-            var plusPath = UIBezierPath()
+            let plusPath = UIBezierPath()
             
             //set the path's line width to the height of the stroke
             plusPath.lineWidth = 8

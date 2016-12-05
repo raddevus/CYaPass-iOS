@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2AE75CDDCC680E88187C53BF /* Pods_CYaPass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6B2552F3E774B8E8777E98 /* Pods_CYaPass.framework */; };
 		635526911DA9A47800390466 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526901DA9A47800390466 /* AppDelegate.swift */; };
 		635526931DA9A47800390466 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526921DA9A47800390466 /* MainViewController.swift */; };
 		635526951DA9A47800390466 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526941DA9A47800390466 /* SettingsViewController.swift */; };
@@ -20,6 +19,7 @@
 		635526AC1DAA935C00390466 /* GridPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526AB1DAA935C00390466 /* GridPassView.swift */; };
 		6384D3851DBD381200522303 /* CyaSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384D3841DBD381200522303 /* CyaSettings.swift */; };
 		63A3A67E1DF32F23001DF72B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */; };
+		9D1025C5B379F71C939F8C3D /* Pods_CYaPass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 985DA0B34DB0790CAD017002 /* Pods_CYaPass.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,9 @@
 		635526AB1DAA935C00390466 /* GridPassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPassView.swift; sourceTree = "<group>"; };
 		6384D3841DBD381200522303 /* CyaSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyaSettings.swift; sourceTree = "<group>"; };
 		63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DB6B2552F3E774B8E8777E98 /* Pods_CYaPass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CYaPass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A3A67F1DF37C24001DF72B /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../../Library/Developer/Xcode/DerivedData/CYaPass-bbufzxzhksqlmweebomsjgsndthm/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
+		63A3A6811DF4700B001DF72B /* CYaPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CYaPass.entitlements; sourceTree = "<group>"; };
+		985DA0B34DB0790CAD017002 /* Pods_CYaPass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CYaPass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA56FF3AF914F6000FA7533D /* Pods-CYaPass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYaPass.release.xcconfig"; path = "Pods/Target Support Files/Pods-CYaPass/Pods-CYaPass.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AE75CDDCC680E88187C53BF /* Pods_CYaPass.framework in Frameworks */,
+				9D1025C5B379F71C939F8C3D /* Pods_CYaPass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +78,7 @@
 		6355268F1DA9A47800390466 /* CYaPass */ = {
 			isa = PBXGroup;
 			children = (
+				63A3A6811DF4700B001DF72B /* CYaPass.entitlements */,
 				63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */,
 				635526A41DA9BF4500390466 /* MainBridge.h */,
 				635526901DA9A47800390466 /* AppDelegate.swift */,
@@ -106,7 +109,8 @@
 		EE9EF3A2A0FFC8B3932FE67E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DB6B2552F3E774B8E8777E98 /* Pods_CYaPass.framework */,
+				63A3A67F1DF37C24001DF72B /* GoogleToolboxForMac.framework */,
+				985DA0B34DB0790CAD017002 /* Pods_CYaPass.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,13 +145,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "roger deutsch";
 				TargetAttributes = {
 					6355268C1DA9A47800390466 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FEHZ353535;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -287,6 +296,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -337,6 +347,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -366,8 +377,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 08D29F5E5D00E72A0EA0D6F7 /* Pods-CYaPass.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CYaPass/CYaPass.entitlements;
 				DEVELOPMENT_TEAM = FEHZ353535;
+				ENABLE_BITCODE = NO;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks/frameworks\"",
+				);
 				INFOPLIST_FILE = CYaPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -383,10 +407,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA56FF3AF914F6000FA7533D /* Pods-CYaPass.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CYaPass/CYaPass.entitlements;
 				DEVELOPMENT_TEAM = FEHZ353535;
+				ENABLE_BITCODE = NO;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks/frameworks\"",
+					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks/frameworks\"",
+				);
 				INFOPLIST_FILE = CYaPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = us.raddev.CYaPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";

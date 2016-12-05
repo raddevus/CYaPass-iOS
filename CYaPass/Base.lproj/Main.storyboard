@@ -267,20 +267,31 @@
                                     <constraint firstItem="JR4-Gk-MwZ" firstAttribute="top" secondItem="RTt-7y-vYc" secondAttribute="bottom" constant="49" id="bG9-Go-YHK"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzk-2z-J7y" userLabel="AdView" customClass="GADBannerView">
+                                <rect key="frame" x="27" y="568" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="8FJ-2K-wuK"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ec1-JQ-Kmu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cnH-tq-aZu" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="PVZ-23-Ueq"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Uzk-2z-J7y" secondAttribute="bottom" id="TOa-Xh-BBt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cnH-tq-aZu" secondAttribute="trailing" constant="5" id="lmZ-2g-iYW" userLabel="trailingMargin = Stack View.trailing + 15"/>
+                            <constraint firstItem="Uzk-2z-J7y" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="rX6-LL-17j"/>
                             <constraint firstItem="cnH-tq-aZu" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="5" id="z95-RV-wjH" userLabel="Stack View.leading = leadingMargin + 15"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="second" id="XS1-XE-NFQ" userLabel="Settings"/>
                     <connections>
+                        <outlet property="AdMobs" destination="Uzk-2z-J7y" id="dMa-31-aYF"/>
                         <outlet property="MaxCharsText" destination="F0W-VW-64X" id="eKz-XN-NwG"/>
                         <outlet property="SpecialCharsText" destination="CGI-re-n6b" id="KRm-70-Sty"/>
+                        <outlet property="SuperView" destination="Uzk-2z-J7y" id="acP-Dw-MpW"/>
                         <outlet property="maxCharsStepper" destination="HzC-rL-Xs4" id="Rqy-BI-lTa"/>
-                        <outlet property="maxCharsSwitch" destination="Zmn-8e-5Fv" id="AQs-PH-UQZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
