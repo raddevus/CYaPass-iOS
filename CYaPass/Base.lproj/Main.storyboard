@@ -32,7 +32,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="25"/>
-                                        <color key="backgroundColor" red="0.98107949293128738" green="0.98704663210207255" blue="0.72938707269402969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Clear Grid"/>
                                         <connections>
                                             <action selector="ClearGridButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="knp-dm-oG0"/>
@@ -57,7 +56,6 @@
                                         <subviews>
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF" userLabel="AddSiteKey">
                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="73"/>
-                                                <color key="backgroundColor" red="0.98107949293128738" green="0.98704663210207255" blue="0.72938707269402969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Add"/>
                                                 <connections>
                                                     <action selector="AddSiteButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="I3x-QZ-j2l"/>
@@ -69,7 +67,6 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-5M-lye" userLabel="Delete">
                                                 <rect key="frame" x="0.0" y="123" width="177.5" height="25"/>
-                                                <color key="backgroundColor" red="0.98107949293128738" green="0.98704663210207255" blue="0.72938707269402969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="M3K-lM-Q2e"/>
                                                 </constraints>
