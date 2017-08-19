@@ -18,7 +18,6 @@
 		635526AA1DAA920500390466 /* HashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526A91DAA920500390466 /* HashGenerator.swift */; };
 		635526AC1DAA935C00390466 /* GridPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635526AB1DAA935C00390466 /* GridPassView.swift */; };
 		6384D3851DBD381200522303 /* CyaSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384D3841DBD381200522303 /* CyaSettings.swift */; };
-		63A3A67E1DF32F23001DF72B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */; };
 		9D1025C5B379F71C939F8C3D /* Pods_CYaPass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 985DA0B34DB0790CAD017002 /* Pods_CYaPass.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		635526A91DAA920500390466 /* HashGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashGenerator.swift; sourceTree = "<group>"; };
 		635526AB1DAA935C00390466 /* GridPassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPassView.swift; sourceTree = "<group>"; };
 		6384D3841DBD381200522303 /* CyaSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyaSettings.swift; sourceTree = "<group>"; };
-		63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63A3A67F1DF37C24001DF72B /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../../Library/Developer/Xcode/DerivedData/CYaPass-bbufzxzhksqlmweebomsjgsndthm/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
 		63A3A6811DF4700B001DF72B /* CYaPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CYaPass.entitlements; sourceTree = "<group>"; };
 		985DA0B34DB0790CAD017002 /* Pods_CYaPass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CYaPass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				63A3A6811DF4700B001DF72B /* CYaPass.entitlements */,
-				63A3A67D1DF32F23001DF72B /* GoogleService-Info.plist */,
 				635526A41DA9BF4500390466 /* MainBridge.h */,
 				635526901DA9A47800390466 /* AppDelegate.swift */,
 				635526921DA9A47800390466 /* MainViewController.swift */,
@@ -184,7 +181,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6355269D1DA9A47900390466 /* LaunchScreen.storyboard in Resources */,
-				63A3A67E1DF32F23001DF72B /* GoogleService-Info.plist in Resources */,
 				6355269A1DA9A47900390466 /* Assets.xcassets in Resources */,
 				635526981DA9A47800390466 /* Main.storyboard in Resources */,
 			);

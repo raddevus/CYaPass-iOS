@@ -6,7 +6,6 @@
 //  Copyright © 2016 roger deutsch. All rights reserved.
 //
 
-import GoogleMobileAds
 import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate{
@@ -203,16 +202,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
             genUserHash()
     }
     
-    @IBOutlet weak var AdMobs: GADBannerView!
-    func loadAd(){
-        
-        // AdMobs.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        AdMobs.adUnitID = "ca-app-pub-6286879032545261/2319897125"
-        AdMobs.rootViewController = self
-        AdMobs.load(GADRequest())
-        //SuperView.backgroundColor = UIColor.black;
-    }
-    
     override func viewDidLayoutSubviews() {
         if g == nil{
             addSubView()
@@ -220,7 +209,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         if (UserDefaults.standard.array(forKey : "siteKeys") != nil){
              siteKeyPickerValues = UserDefaults.standard.array(forKey: "siteKeys") as! [String]
         }
-        loadAd()
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         addSubView(forceRemoveGridView: true)
