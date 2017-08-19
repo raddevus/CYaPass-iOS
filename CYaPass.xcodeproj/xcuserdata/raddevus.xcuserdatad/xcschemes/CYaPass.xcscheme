@@ -86,6 +86,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "CYaPass_v100"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

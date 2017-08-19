@@ -146,11 +146,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "roger deutsch";
+				ORGANIZATIONNAME = "Roger Deutsch";
 				TargetAttributes = {
 					6355268C1DA9A47800390466 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = FEHZ353535;
+						DevelopmentTeam = 2SRF5TLB8K;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -380,7 +380,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CYaPass/CYaPass.entitlements;
-				DEVELOPMENT_TEAM = FEHZ353535;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2SRF5TLB8K;
 				ENABLE_BITCODE = NO;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -395,7 +396,7 @@
 				INFOPLIST_FILE = CYaPass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = us.raddev.CYaPass;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyapass.CYaPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = CYaPass/MainBridge.h;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = CYaPass/MainBridge.h;
@@ -410,7 +411,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CYaPass/CYaPass.entitlements;
-				DEVELOPMENT_TEAM = FEHZ353535;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2SRF5TLB8K;
 				ENABLE_BITCODE = NO;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -425,7 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = us.raddev.CYaPass;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyapass.CYaPass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = CYaPass/MainBridge.h;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = CYaPass/MainBridge.h;
