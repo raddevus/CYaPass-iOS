@@ -32,7 +32,7 @@ class HashGenerator{
         }
         
         if (MainViewController.cyaSettings.isSpecialCharsOn){
-            for c in MainViewController.cyaSettings.specialChars.characters{
+            for c in MainViewController.cyaSettings.specialChars{
             finalHash.insert(c , at: finalHash.index(finalHash.startIndex, offsetBy:3))
             }
         }
@@ -41,7 +41,7 @@ class HashGenerator{
             
             let index = finalHash.index(finalHash.startIndex, offsetBy: MainViewController.cyaSettings.maxPassLength)
            
-            finalHash = finalHash.substring(to: index)
+            finalHash = String(finalHash[..<index])
         }
         
         if (MainViewController.cyaSettings.isUppercaseOn){
@@ -54,7 +54,7 @@ class HashGenerator{
     
     func findFirstLetterIndex (_ phrase: String, foundChar : inout Character) -> Int{
         var charCounter : Int = 0
-        for c in phrase.characters{
+        for c in phrase{
             // print(c, terminator:"")
             if ((c >= "A" && c <= "Z") || (c >= "a" && c <= "z") ){
                 // print()

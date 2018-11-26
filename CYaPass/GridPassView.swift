@@ -41,7 +41,6 @@ class GridPassView : UIView{
         self.Width = width
         self.Height = height
         self.numOfCells = 5
-        var maxCells : Int = numOfCells + 1
         self.cellSize = Int(height / numOfCells)
         generateAllPosts()
         
@@ -70,7 +69,7 @@ class GridPassView : UIView{
                 arcCenter: CGPoint(x:allPosts[idx].x,y:allPosts[idx].y),
                 radius: CGFloat( postWidth),
                 startAngle: CGFloat(0),
-                endAngle:CGFloat(M_PI * 2),
+                endAngle:CGFloat(Double.pi * 2),
                 clockwise: true)
             
             let shapeLayer = CAShapeLayer()
@@ -154,7 +153,7 @@ class GridPassView : UIView{
             arcCenter: point1,
             radius: CGFloat( postWidth + 7 ),
             startAngle: CGFloat(0),
-            endAngle:CGFloat(M_PI * 2),
+            endAngle:CGFloat(Double.pi * 2),
             clockwise: true)
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = circlePath.cgPath

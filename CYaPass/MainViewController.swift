@@ -9,7 +9,7 @@
 import GoogleMobileAds
 import UIKit
 
-class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDelegate{
+class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
     @IBOutlet weak var TopGridView: UIView!
   
     var textField : UITextField? = nil
@@ -55,8 +55,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         if (siteKeyPickerValues.count <= 0) {return }
         let selItemIdx : Int  = self.SiteKeyPicker.selectedRow(inComponent: 0)
         let currentKey : String = siteKeyPickerValues[selItemIdx]
-        let alert = UIAlertController(title: "Delete key?", message: "Are you sure you want to delete the item: \(currentKey)?", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Delete key?", message: "Are you sure you want to delete the item: \(currentKey)?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
             switch action.style{
             case .default:
@@ -80,9 +80,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     
    func configurationTextField(textField: UITextField!)
     {
-        print("configurat hire the TextField")
-        
-        if let tField = textField {
+        if textField != nil {
             
             self.textField = textField!        //Save reference to the UITextField
             self.textField?.text = ""
@@ -91,9 +89,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     
     @IBAction func AddSiteButtonClicked(_ sender: AnyObject) {
         
-        let alert = UIAlertController(title: "Add New Key?", message: "Please type the key you'd like to enter", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Add New Key?", message: "Please type the key you'd like to enter", preferredStyle: UIAlertController.Style.alert)
         alert.addTextField(configurationHandler: configurationTextField)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
             switch action.style{
             case .default:
@@ -122,14 +120,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        if (siteKeyPickerValues != nil){
-            return siteKeyPickerValues.count
-        }
-        return 0
+        return siteKeyPickerValues.count
     }
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
-        if (siteKeyPickerValues != nil && siteKeyPickerValues.count > 0){
+        if (siteKeyPickerValues.count > 0){
             return siteKeyPickerValues[row]
         }
         return nil
@@ -217,8 +212,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UITextFieldDel
         if g == nil{
             addSubView()
         }
-        if (UserDefaults.standard.array(forKey : "siteKeys") != nil){
+        if (siteKeyPickerValues.count <= 0){
+            if (UserDefaults.standard.array(forKey : "siteKeys") != nil){
              siteKeyPickerValues = UserDefaults.standard.array(forKey: "siteKeys") as! [String]
+            }
         }
         loadAd()
     }
