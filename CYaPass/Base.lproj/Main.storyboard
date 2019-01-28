@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,12 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrl-9S-DHQ">
-                                <rect key="frame" x="16" y="30" width="343" height="334"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yrl-9S-DHQ">
+                                <rect key="frame" x="22" y="30" width="330" height="330"/>
                                 <color key="backgroundColor" red="0.94458484343384919" green="0.99117768925672212" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5EO-xj-W9v">
-                                <rect key="frame" x="26" y="374" width="323" height="25"/>
+                                <rect key="frame" x="26" y="373.5" width="323" height="25"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-65-YDB">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="25"/>
@@ -43,30 +41,30 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qco-lS-7Rj">
-                                <rect key="frame" x="10" y="460" width="355" height="148"/>
+                                <rect key="frame" x="10" y="459.5" width="355" height="148.5"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flh-F5-NCd">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="148"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="148.5"/>
                                         <connections>
                                             <outlet property="delegate" destination="9pv-A4-QxB" id="NEl-kB-13D"/>
                                         </connections>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3CA-Je-wLd">
-                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="148"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="148.5"/>
                                         <subviews>
                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQB-Mu-YrF" userLabel="AddSiteKey">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="73"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
                                                 <state key="normal" title="Add"/>
                                                 <connections>
                                                     <action selector="AddSiteButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="I3x-QZ-j2l"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax5-1a-YPA" customClass="GADBannerView">
-                                                <rect key="frame" x="0.0" y="73" width="177.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="30" width="177.5" height="93.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-5M-lye" userLabel="Delete">
-                                                <rect key="frame" x="0.0" y="123" width="177.5" height="25"/>
+                                                <rect key="frame" x="0.0" y="123.5" width="177.5" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="M3K-lM-Q2e"/>
                                                 </constraints>
@@ -84,7 +82,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDE-bk-Kvm">
-                                <rect key="frame" x="21" y="402" width="333" height="55"/>
+                                <rect key="frame" x="21" y="401.5" width="333" height="55"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L" userLabel="Hash Label">
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="55"/>
@@ -262,7 +260,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzk-2z-J7y" userLabel="AdView" customClass="GADBannerView">
-                                <rect key="frame" x="27" y="568" width="320" height="50"/>
+                                <rect key="frame" x="27.5" y="568" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="8FJ-2K-wuK"/>

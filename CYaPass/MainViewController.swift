@@ -14,6 +14,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
   
     var textField : UITextField? = nil
     
+    
     @IBOutlet weak var SiteKeyPicker: UIPickerView!
     @IBOutlet weak var ClearGridButton: UIButton!
     @IBOutlet weak var HashLabelOutlet: UILabel!
@@ -35,7 +36,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         super.viewDidLoad()
         
         MainViewController.cyaSettings = CyaSettings(self)
-        
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -144,10 +145,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                 g = nil
             }
         }
+        
         topGridViewWidth = Int(TopGridView.frame.width)
-        
-        
-        topGridViewHeight = Int(TopGridView.frame.height)
+        topGridViewHeight = topGridViewWidth //Int(TopGridView.frame.height)
         
 
         g = GridPassView(frame: view.frame, width: topGridViewWidth!, height: topGridViewHeight!)
